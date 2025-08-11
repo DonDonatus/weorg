@@ -1,13 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
+
 @import "tailwindcss";
 
 :root {
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Schibsted Grotesk', serif;
   --primary-50: #f0f9ff;
   --primary-100: #e0f2fe;
   --primary-500: #0ea5e9;
   --primary-600: #0284c7;
   --primary-700: #0369a1;
   --primary-900: #0c4a6e;
-  
+
   --accent-orange: #f97316;
   --accent-purple: #8b5cf6;
   --accent-green: #10b981;
@@ -78,5 +82,444 @@ html {
   }
   50% {
     transform: translateY(-10px);
+  }
+}
+
+/* Navbar Button Classes */
+.navbar-btn-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(to right, #2563eb, #1d4ed8);
+  color: white;
+  border: 2px solid #1d4ed8;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.navbar-btn-primary:hover {
+  background: linear-gradient(to right, #1d4ed8, #1e40af);
+}
+
+.navbar-btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), transparent, transparent);
+}
+
+.navbar-btn-primary span {
+  position: relative;
+  z-index: 10;
+}
+
+.navbar-btn-primary svg {
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+.navbar-btn-secondary {
+  padding: 0.75rem 1rem;
+  color: #4b5563;
+  transition: color 0.2s;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+.navbar-btn-secondary:hover {
+  color: #111827;
+}
+
+.navbar-btn-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.75rem 1rem;
+  color: #4b5563;
+  transition: color 0.2s;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+.navbar-btn-dropdown:hover {
+  color: #111827;
+}
+
+.navbar-btn-dropdown svg {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.2s;
+}
+
+.navbar-btn-dropdown.active svg {
+  transform: rotate(180deg);
+}
+
+.navbar-btn-mobile {
+  padding: 0.5rem;
+  color: #4b5563;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.navbar-btn-mobile:hover {
+  color: #111827;
+}
+
+.navbar-btn-mobile svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Alternative Primary Button Style (from Nav component) */
+.navbar-btn-primary-alt {
+  position: relative;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(to right, #2563eb, #9333ea);
+  color: white;
+  border-radius: 1rem;
+  transition: all 0.3s;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.navbar-btn-primary-alt:hover {
+  background: linear-gradient(to right, #1d4ed8, #7c3aed);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
+}
+
+.navbar-btn-primary-alt::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.navbar-btn-primary-alt:hover::before {
+  opacity: 1;
+}
+
+.navbar-btn-primary-alt span {
+  position: relative;
+  z-index: 10;
+}
+
+/* Alternative Secondary Button Style (from Nav component) */
+.navbar-btn-secondary-alt {
+  position: relative;
+  padding: 0.75rem 1.5rem;
+  color: #374151;
+  transition: all 0.3s;
+  border-radius: 1rem;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.navbar-btn-secondary-alt:hover {
+  color: #2563eb;
+  background-color: rgba(249, 250, 251, 0.8);
+}
+
+.navbar-btn-secondary-alt::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #2563eb;
+  transition: width 0.3s;
+}
+
+.navbar-btn-secondary-alt:hover::after {
+  width: 100%;
+}
+
+.navbar-btn-secondary-alt span {
+  position: relative;
+  z-index: 10;
+}
+
+/* Action Button Style (for search, user icons) */
+.navbar-btn-action {
+  padding: 0.75rem;
+  color: #4b5563;
+  transition: all 0.2s;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.navbar-btn-action:hover {
+  color: #2563eb;
+  background-color: rgba(249, 250, 251, 0.8);
+}
+
+.navbar-btn-action svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Primary Button Class */
+.btn-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(to bottom, #2563eb, #1d4ed8);
+  color: white;
+  border: 2px solid #1d4ed8;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s;
+  overflow: hidden;
+  cursor: pointer;
+  min-height: 3rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .btn-primary {
+    width: auto;
+    min-height: auto;
+  }
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to bottom, #1d4ed8, #1e40af);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), transparent, transparent);
+}
+
+.btn-primary span {
+  position: relative;
+  z-index: 10;
+}
+
+.btn-primary svg {
+  position: relative;
+  z-index: 10;
+}
+
+/* Outline Button Class */
+.btn-outline {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1);
+  transition: all 0.2s;
+  overflow: hidden;
+  cursor: pointer;
+  min-height: 3rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .btn-outline {
+    width: auto;
+    min-height: auto;
+  }
+}
+
+.btn-outline:hover {
+  background: #2563eb;
+  color: white;
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2), 0 4px 6px -2px rgba(37, 99, 235, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-outline::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), transparent, transparent);
+}
+
+.btn-outline span {
+  position: relative;
+  z-index: 10;
+}
+
+.btn-outline svg {
+  position: relative;
+  z-index: 10;
+}
+
+/* Primary Button Variants */
+.btn-primary-sm {
+  padding: 0.625rem 1.5rem;
+  font-size: 0.875rem;
+}
+
+.btn-primary-lg {
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+}
+
+.btn-primary-xl {
+  padding: 1.25rem 3rem;
+  font-size: 1.25rem;
+}
+
+/* Primary Button with Icon */
+.btn-primary-icon {
+  padding: 0.875rem 1.5rem;
+}
+
+.btn-primary-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Primary Button Full Width */
+.btn-primary-full {
+  width: 100%;
+}
+
+/* Primary Button Loading State */
+.btn-primary.loading {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.btn-primary.loading::after {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-left: 0.5rem;
+}
+
+/* White Button Class */
+.btn-white {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(to bottom, #ffffff, #f8fafc);
+  color: #1f2937;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s;
+  overflow: hidden;
+  cursor: pointer;
+  min-height: 3rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .btn-white {
+    width: auto;
+    min-height: auto;
+  }
+}
+
+.btn-white:hover {
+  background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
+  color: #111827;
+  border-color: #cbd5e1;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
+}
+
+.btn-white::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.8), transparent, transparent);
+}
+
+.btn-white span {
+  position: relative;
+  z-index: 10;
+}
+
+.btn-white svg {
+  position: relative;
+  z-index: 10;
+}
+
+/* White Button Variants */
+.btn-white-sm {
+  padding: 0.625rem 1.5rem;
+  font-size: 0.875rem;
+}
+
+.btn-white-lg {
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+}
+
+.btn-white-xl {
+  padding: 1.25rem 3rem;
+  font-size: 1.25rem;
+}
+
+/* White Button with Icon */
+.btn-white-icon {
+  padding: 0.875rem 1.5rem;
+}
+
+.btn-white-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* White Button Full Width */
+.btn-white-full {
+  width: 100%;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }

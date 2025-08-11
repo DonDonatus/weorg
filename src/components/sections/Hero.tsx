@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { CheckCircle, ArrowRight, Zap, Users, Clock } from "lucide-react";
+import { CheckCircle, ArrowRight, Zap, Users, Clock, Sparkles } from "lucide-react";
 import Link from "next/link";
 
 export default function Hero() {
@@ -12,19 +12,19 @@ export default function Hero() {
     {
       label: "Queue Processing",
       value: "-87% Wait Time",
-      color: "text-emerald-500",
+      color: "text-emerald-600",
       icon: Clock,
     },
     {
       label: "Document Processing",
       value: "+340% Faster",
-      color: "text-blue-500",
+      color: "text-blue-600",
       icon: Zap,
     },
     {
       label: "Staff Efficiency",
       value: "+250% Productivity",
-      color: "text-purple-500",
+      color: "text-slate-700",
       icon: Users,
     },
   ];
@@ -33,104 +33,103 @@ export default function Hero() {
     setIsVisible(true);
     const interval = setInterval(() => {
       setActiveMetric((prev) => (prev + 1) % metrics.length);
-    }, 2000);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden min-h-screen flex items-center">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-orange-400/20 to-pink-400/20 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-green-400/10 to-blue-400/10 rounded-full filter blur-3xl"></div>
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div
-            className={`${
-              isVisible ? "animate-fade-in" : "opacity-0"
-            } space-y-8`}
-          >
-            {/* Brand Badge */}
-            <div className="inline-flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 border border-blue-200/50 shadow-lg">
-              <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-pulse"></div>
-              <span className="text-blue-700 font-semibold text-sm">
-                Built for people. Powered by AI.
-              </span>
-            </div>
-
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-white">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20 z-10">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
+          {/* Left Content */}
+          <div className={`${isVisible ? "animate-fade-in" : "opacity-0"} space-y-6 sm:space-y-8 lg:space-y-10`}>
             {/* Main Headline */}
-            <div className="space-y-4">
-              <h1 className="text-5xl lg:text-7xl font-bold text-slate-900 leading-tight">
-                <span className="block">Simplifying</span>
-                <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
+            <div className="mt-8 sm:mt-0 space-y-4 sm:space-y-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 leading-tight">
+                Simplifying
+                <span className="block bg-gradient-to-r from-blue-600 to-slate-700 bg-clip-text text-transparent">
                   Complex Processes
                 </span>
                 <span className="block text-slate-700">Across Africa</span>
               </h1>
 
-              <p className="text-xl lg:text-2xl text-slate-600 leading-relaxed max-w-xl">
-                We create AI-powered automation agents that streamline
-                operations for governments and enterprises.
-                <span className="font-semibold text-slate-800">
-                  {" "}
-                  Our tools don't replace people—they empower them.
-                </span>
-              </p>
+              <div className="space-y-3 sm:space-y-4 max-w-2xl">
+                <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-slate-600 leading-relaxed">
+                  We create AI-powered automation agents that streamline
+                  operations for governments and enterprises.
+                </p>
+              </div>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="group bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-2xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-semibold shadow-xl hover:shadow-2xl transform hover:-translate-y-2 flex items-center justify-center space-x-2">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+              <button className="btn-primary group">
                 <span>Start Your Journey</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
               <Link href="/learnmore">
-                <button className="border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-2xl hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 font-semibold backdrop-blur-sm">
-                  Learn More
+                <button className="btn-white">
+                  <span>Learn More</span>
                 </button>
               </Link>
             </div>
 
             {/* Trust Indicators */}
-            <div className="pt-8 border-t border-slate-200">
-              <p className="text-sm text-slate-500 mb-3">
-                Trusted by organizations across Africa
-              </p>
-              <div className="flex items-center space-x-6 text-slate-400">
-                <div className="w-20 h-8 bg-slate-200 rounded opacity-60"></div>
-                <div className="w-20 h-8 bg-slate-200 rounded opacity-60"></div>
-                <div className="w-20 h-8 bg-slate-200 rounded opacity-60"></div>
+            <div className="pt-6 sm:pt-8 border-t border-slate-200">
+              <div className="space-y-4 sm:space-y-6">
+                <p className="text-xs sm:text-sm text-slate-500 font-medium text-center">
+                  Trusted by organizations across Africa
+                </p>
+                <div className="grid grid-cols-3 gap-4 sm:gap-6">
+                  <div className="text-center group">
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-600 group-hover:scale-110 transition-transform mb-1">
+                      15+
+                    </div>
+                    <div className="text-xs sm:text-sm text-slate-600 font-medium">
+                      Countries
+                    </div>
+                  </div>
+                  <div className="text-center group">
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-emerald-600 group-hover:scale-110 transition-transform mb-1">
+                      500+
+                    </div>
+                    <div className="text-xs sm:text-sm text-slate-600 font-medium">
+                      Partners
+                    </div>
+                  </div>
+                  <div className="text-center group">
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-700 group-hover:scale-110 transition-transform mb-1">
+                      99%
+                    </div>
+                    <div className="text-xs sm:text-sm text-slate-600 font-medium">
+                      Satisfaction
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Interactive Dashboard */}
-          <div
-            className={`relative ${
-              isVisible ? "animate-slide-up" : "opacity-0"
-            }`}
-          >
-            <div className="relative z-10 bg-white/90 backdrop-blur-lg rounded-3xl shadow-2xl p-8 border border-white/20">
+          {/* Right Content - Enhanced Dashboard */}
+          <div className={`relative ${isVisible ? "animate-slide-up" : "opacity-0"}`}>
+            <div className="bg-white/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border border-slate-200/60 shadow-xl sm:shadow-2xl">
               {/* Header */}
-              <div className="flex items-center space-x-3 mb-8">
-                <div className="w-10 h-10 bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-xl flex items-center justify-center">
-                  <CheckCircle className="w-6 h-6 text-white" />
+              <div className="flex items-center space-x-4 mb-8">
+                <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-blue-600 to-slate-700 rounded-2xl flex items-center justify-center shadow-lg">
+                  <CheckCircle className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
                 </div>
-                <div>
-                  <h3 className="font-bold text-slate-900 text-lg">
+                <div className="flex-1">
+                  <h3 className="font-bold text-slate-900 text-lg lg:text-xl mb-1">
                     AI Automation Dashboard
                   </h3>
-                  <p className="text-sm text-slate-500">
+                  <p className="text-slate-600 text-xs lg:text-sm">
                     Real-time performance metrics
                   </p>
                 </div>
               </div>
 
               {/* Metrics */}
-              <div className="space-y-4">
+              <div className="space-y-4 sm:space-y-6">
                 {metrics.map((metric, index) => {
                   const IconComponent = metric.icon;
                   const isActive = index === activeMetric;
@@ -138,66 +137,63 @@ export default function Hero() {
                   return (
                     <div
                       key={index}
-                      className={`flex items-center justify-between p-4 rounded-2xl transition-all duration-500 ${
-                        isActive
-                          ? "bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-200 shadow-lg transform scale-105"
-                          : "bg-slate-50 hover:bg-slate-100"
-                      }`}
+                      className={`p-4 sm:p-6 rounded-xl sm:rounded-2xl transition-all duration-500 ${isActive
+                          ? "bg-gradient-to-r from-blue-50 to-slate-50 border-2 border-blue-200 shadow-lg transform scale-105"
+                          : "bg-slate-50 hover:bg-slate-100 border border-slate-200 hover:border-slate-300"
+                        }`}
                     >
-                      <div className="flex items-center space-x-3">
-                        <div
-                          className={`w-8 h-8 rounded-lg flex items-center justify-center ${
-                            isActive
-                              ? "bg-gradient-to-r from-blue-500 to-purple-500"
-                              : "bg-slate-300"
-                          }`}
-                        >
-                          <IconComponent
-                            className={`w-4 h-4 ${
-                              isActive ? "text-white" : "text-slate-600"
-                            }`}
-                          />
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3 sm:space-x-4">
+                          <div
+                            className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center transition-all duration-500 ${isActive
+                                ? "bg-gradient-to-r from-blue-600 to-slate-700 shadow-lg"
+                                : "bg-slate-200"
+                              }`}
+                          >
+                            <IconComponent
+                              className={`w-5 h-5 sm:w-6 sm:h-6 ${isActive ? "text-white" : "text-slate-600"
+                                }`}
+                            />
+                          </div>
+                          <div>
+                            <span
+                              className={`font-semibold text-sm sm:text-base ${isActive ? "text-slate-900" : "text-slate-700"
+                                }`}
+                            >
+                              {metric.label}
+                            </span>
+                          </div>
                         </div>
                         <span
-                          className={`font-medium ${
-                            isActive ? "text-slate-900" : "text-slate-700"
-                          }`}
+                          className={`font-bold text-lg sm:text-xl lg:text-2xl ${metric.color} ${isActive ? "animate-pulse" : ""
+                            }`}
                         >
-                          {metric.label}
+                          {metric.value}
                         </span>
                       </div>
-                      <span
-                        className={`font-bold text-lg ${metric.color} ${
-                          isActive ? "animate-pulse" : ""
-                        }`}
-                      >
-                        {metric.value}
-                      </span>
                     </div>
                   );
                 })}
               </div>
 
-              {/* Status Indicator */}
+              {/* Status Bar */}
               <div className="mt-6 pt-6 border-t border-slate-200">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
-                    <span className="text-sm text-slate-600">
+                    <div className="w-2 h-2 lg:w-3 lg:h-3 bg-emerald-500 rounded-full animate-pulse"></div>
+                    <span className="text-xs lg:text-sm text-slate-700 font-medium">
                       System Status: Active
                     </span>
                   </div>
-                  <span className="text-xs text-slate-400">
-                    Last updated: now
-                  </span>
+                  <div className="flex items-center space-x-2 text-slate-500">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                    <span className="text-xs font-medium">
+                      Live monitoring
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
-
-            {/* Floating Elements */}
-            <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-20 animate-pulse"></div>
-            <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-gradient-to-r from-orange-400 to-pink-400 rounded-full opacity-15 animate-pulse delay-1000"></div>
-            <div className="absolute top-1/2 -right-3 w-6 h-6 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full opacity-40 animate-bounce"></div>
           </div>
         </div>
       </div>
