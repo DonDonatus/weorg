@@ -1,12 +1,11 @@
 "use client"
 
 import { useState, useEffect } from 'react'
-import { Zap, CheckCircle, ArrowRight, Target, Heart, Building2, FileCheck, MessageSquare } from 'lucide-react'
+import { ArrowRight, Target, Building2, FileCheck, MessageSquare } from 'lucide-react'
 import 'aos/dist/aos.css'
 
 export default function About() {
     const [activeTestimonial, setActiveTestimonial] = useState(0)
-    const [aosInitialized, setAosInitialized] = useState(false)
 
     useEffect(() => {
         const initAos = async () => {
@@ -15,7 +14,6 @@ export default function About() {
                 duration: 800,
                 once: true
             })
-            setAosInitialized(true)
         }
 
         if (typeof window !== 'undefined') {

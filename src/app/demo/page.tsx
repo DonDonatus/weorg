@@ -14,6 +14,7 @@ import {
   Zap,
   Shield,
 } from "lucide-react";
+import Image from "next/image"; // Added import for Next.js Image component
 
 
 // Define the shape of the form data
@@ -62,7 +63,7 @@ export default function ScheduleDemo() {
             </div>
             <h1 className="text-3xl font-bold text-slate-900 mb-6">Thank You!</h1>
             <p className="text-xl text-slate-600 mb-8">
-              We've received your demo request. Our team will contact you within 24 hours to schedule your personalized demonstration.
+              We&apos;ve received your demo request. Our team will contact you within 24 hours to schedule your personalized demonstration.
             </p>
             <button
               onClick={() => window.history.back()}
@@ -91,7 +92,13 @@ export default function ScheduleDemo() {
               <span className="font-medium">Back</span>
             </button>
             <div className="flex items-center">
-              <img src="/logo_full_b.png" alt="WE Org" className="h-9 w-auto" />
+              <Image 
+                src="/logo_full_b.png" 
+                alt="WE Org" 
+                width={120} 
+                height={36} 
+                className="h-9 w-auto" 
+              />
             </div>
           </div>
         </div>
@@ -275,7 +282,7 @@ export default function ScheduleDemo() {
               </button>
 
               <p className="text-center text-sm text-slate-500">
-                We'll contact you within 24 hours to schedule your demo at a time that works for you.
+                We&apos;ll contact you within 24 hours to schedule your demo at a time that works for you.
               </p>
             </div>
           </div>
@@ -334,9 +341,11 @@ export default function ScheduleDemo() {
           <div className="text-center">
             <div className="flex items-center justify-center space-x-3 mb-4">
               <div className="flex items-center">
-                <img
+                <Image
                   src="/logo_full_w.png"
                   alt="WE Org"
+                  width={120}
+                  height={40}
                   className="h-10 w-auto"
                 />
               </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { ArrowRight, Zap, Users, Clock, Cpu, Database, Network, Shield, Play, ChevronRight } from "lucide-react";
+import { Zap, Users, Clock, Cpu, Database, Network, Shield, Play } from "lucide-react";
 import Link from "next/link";
 
 // Precomputed values for Floating Tech Orbs to ensure consistency
@@ -21,18 +21,9 @@ const matrixStyles = Array.from({ length: 64 }).map((_, i) => ({
   transform: `scaleY(${0.4 + (i % 5) * 0.12})`,
 }));
 
-// Precomputed values for Vision section lines (if applicable)
-const lineStyles = Array.from({ length: 15 }).map((_, i) => ({
-  x1: `${(i * 10 + 5) % 100}%`,
-  y1: `${(i * 8 + 10) % 100}%`,
-  x2: `${(i * 12 + 15) % 100}%`,
-  y2: `${(i * 9 + 20) % 100}%`,
-}));
-
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeMetric, setActiveMetric] = useState(0);
-  const [isHovering, setIsHovering] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
   const metrics = [
@@ -312,8 +303,6 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 lg:gap-6 justify-center lg:justify-start" data-aos="fade-up" data-aos-delay="800">
               <button
                 className="btn-primary group w-full sm:w-auto transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 text-sm sm:text-base md:text-lg"
-                onMouseEnter={() => setIsHovering(true)}
-                onMouseLeave={() => setIsHovering(false)}
               >
                 <span className="flex items-center justify-center lg:justify-start">
                   <Play className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 mr-1.5 sm:mr-2 group-hover:scale-110 transition-transform" />
