@@ -47,6 +47,9 @@ const config: Config = {
           '50%': { transform: 'translateY(-10px)' },
         },
       },
+      scale: {
+        '102': '1.02',
+      },
     },
   },
   plugins: [],
