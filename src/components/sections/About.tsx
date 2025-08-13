@@ -1,14 +1,31 @@
 "use client"
 
-import { useState } from 'react'
-import { Zap, CheckCircle, Users, ArrowRight, Globe, Target, Heart, Brain, Building2, FileCheck, MessageSquare } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { Zap, CheckCircle, ArrowRight, Target, Heart, Building2, FileCheck, MessageSquare } from 'lucide-react'
+import 'aos/dist/aos.css'
 
 export default function About() {
     const [activeTestimonial, setActiveTestimonial] = useState(0)
+    const [aosInitialized, setAosInitialized] = useState(false)
+
+    useEffect(() => {
+        const initAos = async () => {
+            const AOS = (await import('aos')).default
+            AOS.init({
+                duration: 800,
+                once: true
+            })
+            setAosInitialized(true)
+        }
+
+        if (typeof window !== 'undefined') {
+            initAos()
+        }
+    }, [])
 
     const features = [
         {
-            icon: Brain,
+            icon: Building2,
             title: "Applied AI Research",
             description: "Cutting-edge AI research tailored for African contexts.",
             highlight: "Innovation First"
@@ -52,7 +69,7 @@ export default function About() {
     ]
 
     return (
-        <>
+        <div className="bg-white">
             {/* Main About Section */}
             <section className="py-16 md:py-20 bg-white relative">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,7 +84,7 @@ export default function About() {
                                 We build intelligent agents that streamline operations in government and enterprise - driven by local talent and real-world impact.
                             </p>
 
-                            <button className="btn-primary group mb-6 md:mb-8">
+                            <button className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl group mb-6 md:mb-8">
                                 <span>Explore Our Solutions</span>
                                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                             </button>
@@ -97,10 +114,8 @@ export default function About() {
                 <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
             </section>
 
-            {/* 
-             */}
+            {/* Core Services Section */}
             <section className="relative py-20 bg-black overflow-hidden">
-                {/* Subtle gradient glow background */}
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.15),_transparent_60%)]"></div>
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(147,51,234,0.15),_transparent_60%)]"></div>
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(16,185,129,0.1),_transparent_70%)]"></div>
@@ -125,12 +140,10 @@ export default function About() {
                                     data-aos="fade-up"
                                     data-aos-delay={400 + (index * 150)}
                                 >
-                                    {/* Icon */}
                                     <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg bg-gradient-to-r from-blue-600 to-purple-600">
                                         <IconComponent className="w-7 h-7 text-white" />
                                     </div>
 
-                                    {/* Content */}
                                     <h3 className="text-lg font-semibold mb-3 text-white">
                                         {feature.title}
                                     </h3>
@@ -138,7 +151,6 @@ export default function About() {
                                         {feature.description}
                                     </p>
 
-                                    {/* Highlight */}
                                     <div className="pt-3 border-t border-slate-700">
                                         <span className="text-xs font-semibold text-blue-400 uppercase tracking-wide">
                                             {feature.highlight}
@@ -151,14 +163,12 @@ export default function About() {
                 </div>
             </section>
 
-
-            {/* News Highlights / Current Initiatives Section */}
+            {/* News Highlights Section */}
             <section className="py-16 md:py-20 bg-white relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="text-center mb-12" data-aos="fade-up" data-aos-delay="200">
                         <h3 className="text-2xl font-serif uppercase md:text-3xl lg:text-4xl font-bold text-slate-900 mb-3 relative">
                             News Highlights
-                            {/* Tech Underline */}
                             <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-emerald-500 rounded-full"></div>
                         </h3>
                         <p className="text-slate-600 text-sm md:text-base max-w-3xl mx-auto">
@@ -169,10 +179,7 @@ export default function About() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
                         {/* GNSS AI Fellowship */}
                         <div className="group bg-white rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200 hover:-translate-y-1 relative overflow-hidden" data-aos="fade-up" data-aos-delay="400">
-                            {/* Tech Glow Effect */}
                             <div className="absolute inset-0 bg-gradient-to-r from-blue-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                            {/* Tech Corner Brackets */}
                             <div className="absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 border-blue-400 rounded-tl-lg"></div>
                             <div className="absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 border-purple-400 rounded-br-lg"></div>
 
@@ -192,7 +199,6 @@ export default function About() {
                                     <span className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200/50 rounded-full text-xs font-medium text-blue-700 relative">
                                         <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
                                         Active Program
-
                                     </span>
                                 </div>
                             </div>
@@ -200,10 +206,7 @@ export default function About() {
 
                         {/* AI in Public Sector Pilots */}
                         <div className="group bg-white rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200 hover:-translate-y-1 relative overflow-hidden" data-aos="fade-up" data-aos-delay="600">
-                            {/* Tech Glow Effect */}
                             <div className="absolute inset-0 bg-gradient-to-r from-emerald-50/50 to-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                            {/* Tech Corner Brackets */}
                             <div className="absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 border-emerald-400 rounded-tl-lg"></div>
                             <div className="absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 border-blue-400 rounded-br-lg"></div>
 
@@ -230,10 +233,7 @@ export default function About() {
 
                         {/* Twi NLP Model */}
                         <div className="group bg-white rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200 hover:-translate-y-1 relative overflow-hidden" data-aos="fade-up" data-aos-delay="800">
-                            {/* Tech Glow Effect */}
                             <div className="absolute inset-0 bg-gradient-to-r from-orange-50/50 to-red-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                            {/* Tech Corner Brackets */}
                             <div className="absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 border-orange-400 rounded-tl-lg"></div>
                             <div className="absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 border-red-400 rounded-br-lg"></div>
 
@@ -266,9 +266,7 @@ export default function About() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="text-center">
                         <div className="max-w-4xl mx-auto">
-                            {/* Section Header */}
                             <div className="mb-8 md:mb-12" data-aos="fade-up" data-aos-delay="200">
-
                                 <h3 className="text-xl font-serif uppercase sm:text-2xl md:text-3xl font-semibold text-white mb-2 md:mb-3">
                                     Client Feedback
                                 </h3>
@@ -277,13 +275,10 @@ export default function About() {
                                 </p>
                             </div>
 
-                            {/* Testimonial Card */}
                             <div className="group relative" data-aos="fade-up" data-aos-delay="400">
-                                {/* Glow Effect */}
                                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
 
                                 <div className="relative bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-2xl border border-slate-700/50">
-                                    {/* Tech Header */}
                                     <div className="flex justify-center mb-8">
                                         <div className="relative">
                                             <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/25">
@@ -291,17 +286,14 @@ export default function About() {
                                                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                                                 </svg>
                                             </div>
-
                                         </div>
                                     </div>
 
-                                    {/* Quote */}
                                     <blockquote className="text-base sm:text-lg md:text-xl text-slate-100 font-serif mb-6 md:mb-8 leading-relaxed relative">
                                         <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-blue-400 to-purple-400 rounded-full"></div>
                                         &ldquo;{testimonials[activeTestimonial].quote}&rdquo;
                                     </blockquote>
 
-                                    {/* Author with Tech Badge */}
                                     <div className="flex flex-col items-center mb-6 md:mb-8">
                                         <div className="flex items-center space-x-3 mb-3">
                                             <p className="text-slate-200 font-medium">
@@ -310,7 +302,6 @@ export default function About() {
                                         </div>
                                     </div>
 
-                                    {/* Enhanced Navigation */}
                                     <div className="flex justify-center space-x-3 sm:space-x-4">
                                         {testimonials.map((_, index) => (
                                             <button
@@ -337,6 +328,6 @@ export default function About() {
                     </div>
                 </div>
             </section>
-        </>
+        </div>
     )
 }

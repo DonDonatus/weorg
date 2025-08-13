@@ -1,6 +1,6 @@
 'use client'
 
-import { Mail, Phone, MapPin, Globe, Linkedin, Twitter, Facebook, Instagram } from 'lucide-react'
+import Image from 'next/image' // Import Image component
 
 export default function Footer() {
     const solutions = [
@@ -8,30 +8,21 @@ export default function Footer() {
         "Enterprise Automation",
         "AI Integration",
         "Digital Transformation"
-    ];
+    ]
 
     const company = [
         "About Us",
         "Our Vision",
         "Contact",
         "Careers"
-    ];
+    ]
 
     const resources = [
         "Documentation",
         "Case Studies",
         "White Papers",
         "Training Materials"
-    ];
-
-    const support = [
-        "Help Center",
-        "Contact Support",
-        "Status Page",
-        "Community Forum",
-        "Developer Portal",
-        "Knowledge Base"
-    ];
+    ]
 
     return (
         <footer className="bg-gray-900 text-white py-12 md:py-16">
@@ -42,10 +33,12 @@ export default function Footer() {
                     <div className="col-span-2 lg:col-span-2 text-left">
                         <div className="flex items-center justify-start space-x-3 mb-6">
                             <div className="flex items-center">
-                                <img
-                                    src="logo_full_w.png"
+                                <Image
+                                    src="/logo_full_w.png" // Adjust path if needed
                                     alt="WE Org"
-                                    className="h-10 md:h-12 w-auto"
+                                    width={120} // Adjust based on logo's aspect ratio
+                                    height={48} // Matches h-12 (48px) for md screens
+                                    className="object-contain"
                                 />
                             </div>
                         </div>
@@ -145,5 +138,5 @@ export default function Footer() {
                 </div>
             </div>
         </footer>
-    );
+    )
 }

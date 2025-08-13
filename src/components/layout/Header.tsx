@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { Menu, X, ChevronDown } from 'lucide-react'
+import Image from 'next/image' // Import Image component
 
 interface NavItem {
     label: string
@@ -136,7 +137,7 @@ export default function Header() {
     }
 
     return (
-        <header ref={headerRef} className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled
+        <header ref={headerRef} className={`fixed Cosmic top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled
                 ? 'bg-white shadow-sm'
                 : 'bg-transparent'
             }`}>
@@ -146,10 +147,12 @@ export default function Header() {
                     <div className="flex justify-between items-center h-16">
                         {/* Logo */}
                         <div className="flex items-center">
-                            <img
-                                src="logo_full_b.png"
+                            <Image
+                                src="/logo_full_b.png" // Adjust path if needed (ensure it starts with / for Next.js)
                                 alt="WE Org"
-                                className="h-10 w-auto"
+                                width={120} // Adjust based on your logo's aspect ratio
+                                height={40} // Matches the original h-10 (40px)
+                                className="object-contain"
                             />
                         </div>
 
@@ -287,4 +290,3 @@ export default function Header() {
         </header>
     )
 }
-

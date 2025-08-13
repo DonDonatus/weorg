@@ -2,13 +2,9 @@
 import { useState, useEffect } from 'react'
 import {
   ArrowRight,
-  Users,
   Zap,
-  Shield,
   CheckCircle,
   Clock,
-  Sparkles,
-  Play,
   TrendingUp,
   Award,
   Target,
@@ -17,9 +13,11 @@ import {
   ArrowLeft,
   Building2,
   BookOpen,
-  Heart
+  Heart,
+  Play
 } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function EnhancedLandingPage() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -106,7 +104,14 @@ export default function EnhancedLandingPage() {
             <ArrowLeft className="w-5 h-5 mr-2" />
             <span className="text-sm font-medium">Back</span>
           </button></Link>
-          <img src="/logo_full_b.png" alt="WE Logo" className="h-8 w-auto" />
+          <div className="relative h-8 w-32">
+            <Image 
+              src="/logo_full_b.png" 
+              alt="WE Logo" 
+              fill
+              className="object-contain"
+            />
+          </div>
         </div>
       </header>
 
@@ -209,7 +214,7 @@ export default function EnhancedLandingPage() {
       </section>
 
       {/* Process Section - Enhanced with better spacing */}
-     <section id="process" className="py-20 sm:py-32 relative overflow-hidden">
+      <section id="process" className="py-20 sm:py-32 relative overflow-hidden">
         {/* Background gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/20 to-indigo-50/30"></div>
         
@@ -291,10 +296,9 @@ export default function EnhancedLandingPage() {
               ))}
             </div>
           </div>
-
-          
         </div>
       </section>
+
       {/* CTA Section - Enhanced with gradient */}
       <section id="contact" className="py-20 sm:py-32 bg-gradient-to-br from-gray-900 via-gray-900 to-blue-900 text-white px-6 sm:px-8">
         <div className="max-w-4xl mx-auto text-center">
@@ -320,8 +324,15 @@ export default function EnhancedLandingPage() {
       <footer className="py-16 bg-gray-950 px-6 sm:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <img src="/logo_full_b.png" alt="WE Logo" className="h-8 w-auto mx-auto mb-6 invert opacity-90" />
-            <p className="text-gray-400 mb-2">Built for Africa's future</p>
+            <div className="relative h-8 w-32 mx-auto mb-6">
+              <Image 
+                src="/logo_full_b.png" 
+                alt="WE Logo" 
+                fill
+                className="object-contain invert opacity-90"
+              />
+            </div>
+            <p className="text-gray-400 mb-2">Built for Africa&apos;s future</p>
             <p className="text-gray-500 text-sm">© {new Date().getFullYear()} WE Org. All rights reserved.</p>
           </div>
         </div>

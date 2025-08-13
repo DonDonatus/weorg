@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { CheckCircle, ArrowRight, Zap, Users, Clock, Cpu, Database, Network, Shield, Play, ChevronRight } from "lucide-react";
+import { ArrowRight, Zap, Users, Clock, Cpu, Database, Network, Shield, Play, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 // Precomputed values for Floating Tech Orbs to ensure consistency
