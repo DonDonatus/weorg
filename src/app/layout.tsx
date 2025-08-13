@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Spline_Sans_Mono } from 'next/font/google'
 import './globals.css'
+import AOSProvider from '@/components/AOSProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 const splineSansMono = Spline_Sans_Mono({ 
@@ -21,7 +22,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${splineSansMono.variable}`}>{children}</body>
+      <body className={`${inter.className} ${splineSansMono.variable}`}>
+        <AOSProvider>
+          {children}
+        </AOSProvider>
+      </body>
     </html>
   )
 }

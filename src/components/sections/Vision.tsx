@@ -31,7 +31,7 @@ export default function Vision() {
             </div>
             {/* Content */}
             <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
+                <div className="text-center mb-16" data-aos="fade-up" data-aos-delay="200">
                     <h2 className="text-3xl font-serif uppercase sm:text-4xl lg:text-5xl font-semibold mb-6 text-white tracking-tight">
                         Let&apos;s Build the AI Future Together
                     </h2>
@@ -68,6 +68,8 @@ export default function Vision() {
                         <div
                             key={i}
                             className="group bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl p-6 shadow-lg hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-300 border border-slate-700 hover:-translate-y-1"
+                            data-aos="fade-up"
+                            data-aos-delay={400 + (i * 200)}
                         >
                             <div className={`w-14 h-14 rounded-xl bg-gradient-to-r ${item.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                                 {item.icon}

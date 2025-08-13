@@ -58,7 +58,7 @@ export default function About() {
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
                         {/* Left side - Main Message */}
-                        <div>
+                        <div data-aos="fade-right" data-aos-delay="200">
                             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-slate-900">
                                 Ghana&apos;s Premier AI Research &amp; Automation Company
                             </h2>
@@ -74,12 +74,12 @@ export default function About() {
                         </div>
 
                         {/* Right side - Vision */}
-                        <div className="relative">
+                        <div className="relative" data-aos="fade-left" data-aos-delay="400">
                             <div className="rounded-2xl p-6 md:p-8 text-white shadow-xl relative bg-gradient-to-br from-gray-600 to-slate-700">
                                 <div className="w-10 h-10 md:w-12 md:h-12 bg-white/20 rounded-xl flex items-center justify-center mb-4 md:mb-6">
                                     <Target className="w-5 h-5 md:w-6 md:h-6 text-white" />
                                 </div>
-                                <h3 className="text-xl font-serif uppercase font-semibold md:text-2xl font-bold mb-3 md:mb-4">Our Mission</h3>
+                                <h3 className="text-xl font-serif uppercase font-semibold md:text-2xl mb-3 md:mb-4">Our Mission</h3>
                                 <p className="text-blue-100 font-serif leading-relaxed text-base md:text-lg mb-4 md:mb-6">
                                     To transform how African organizations operate by combining cutting-edge AI with deep local understanding.
                                 </p>
@@ -106,7 +106,7 @@ export default function About() {
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(16,185,129,0.1),_transparent_70%)]"></div>
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-16" data-aos="fade-up" data-aos-delay="200">
                         <h2 className="text-3xl font-serif uppercase sm:text-4xl lg:text-5xl font-semibold mb-6 text-white tracking-tight">
                             Our Core Services
                         </h2>
@@ -122,6 +122,8 @@ export default function About() {
                                 <div
                                     key={index}
                                     className="group bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl p-6 shadow-lg hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-300 border border-slate-700 hover:-translate-y-1"
+                                    data-aos="fade-up"
+                                    data-aos-delay={400 + (index * 150)}
                                 >
                                     {/* Icon */}
                                     <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg bg-gradient-to-r from-blue-600 to-purple-600">
@@ -153,7 +155,7 @@ export default function About() {
             {/* News Highlights / Current Initiatives Section */}
             <section className="py-16 md:py-20 bg-white relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="text-center mb-12">
+                    <div className="text-center mb-12" data-aos="fade-up" data-aos-delay="200">
                         <h3 className="text-2xl font-serif uppercase md:text-3xl lg:text-4xl font-bold text-slate-900 mb-3 relative">
                             News Highlights
                             {/* Tech Underline */}
@@ -166,7 +168,7 @@ export default function About() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
                         {/* GNSS AI Fellowship */}
-                        <div className="group bg-white rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200 hover:-translate-y-1 relative overflow-hidden">
+                        <div className="group bg-white rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200 hover:-translate-y-1 relative overflow-hidden" data-aos="fade-up" data-aos-delay="400">
                             {/* Tech Glow Effect */}
                             <div className="absolute inset-0 bg-gradient-to-r from-blue-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
@@ -197,7 +199,7 @@ export default function About() {
                         </div>
 
                         {/* AI in Public Sector Pilots */}
-                        <div className="group bg-white rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200 hover:-translate-y-1 relative overflow-hidden">
+                        <div className="group bg-white rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200 hover:-translate-y-1 relative overflow-hidden" data-aos="fade-up" data-aos-delay="600">
                             {/* Tech Glow Effect */}
                             <div className="absolute inset-0 bg-gradient-to-r from-emerald-50/50 to-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
@@ -227,7 +229,7 @@ export default function About() {
                         </div>
 
                         {/* Twi NLP Model */}
-                        <div className="group bg-white rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200 hover:-translate-y-1 relative overflow-hidden">
+                        <div className="group bg-white rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200 hover:-translate-y-1 relative overflow-hidden" data-aos="fade-up" data-aos-delay="800">
                             {/* Tech Glow Effect */}
                             <div className="absolute inset-0 bg-gradient-to-r from-orange-50/50 to-red-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
@@ -265,7 +267,7 @@ export default function About() {
                     <div className="text-center">
                         <div className="max-w-4xl mx-auto">
                             {/* Section Header */}
-                            <div className="mb-8 md:mb-12">
+                            <div className="mb-8 md:mb-12" data-aos="fade-up" data-aos-delay="200">
 
                                 <h3 className="text-xl font-serif uppercase sm:text-2xl md:text-3xl font-semibold text-white mb-2 md:mb-3">
                                     Client Feedback
@@ -276,7 +278,7 @@ export default function About() {
                             </div>
 
                             {/* Testimonial Card */}
-                            <div className="group relative">
+                            <div className="group relative" data-aos="fade-up" data-aos-delay="400">
                                 {/* Glow Effect */}
                                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
 
