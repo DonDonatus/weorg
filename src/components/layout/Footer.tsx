@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { Mail, Phone, MapPin, Globe, Linkedin, Twitter, Facebook, Instagram } from 'lucide-react'
 
 export default function Footer() {
@@ -42,10 +43,13 @@ export default function Footer() {
                     <div className="col-span-2 lg:col-span-2 text-left">
                         <div className="flex items-center justify-start space-x-3 mb-6">
                             <div className="flex items-center">
-                                <img
-                                    src="logo_full_w.png"
+                                <Image
+                                    src="/logo_full_w.png"
                                     alt="WE Org"
+                                    width={120}
+                                    height={48}
                                     className="h-10 md:h-12 w-auto"
+                                    priority
                                 />
                             </div>
                         </div>
@@ -68,6 +72,7 @@ export default function Footer() {
                                     <a
                                         href="#"
                                         className="hover:text-white transition-colors cursor-pointer block py-1 text-sm"
+                                        aria-label={`Learn more about ${item}`}
                                     >
                                         {item}
                                     </a>
@@ -83,8 +88,9 @@ export default function Footer() {
                             {company.map((item, index) => (
                                 <li key={index}>
                                     <a
-                                        href="#"
+                                        href={item === "About Us" ? "/about" : "#"}
                                         className="hover:text-white transition-colors cursor-pointer block py-1 text-sm"
+                                        aria-label={`Learn more about ${item}`}
                                     >
                                         {item}
                                     </a>
@@ -102,6 +108,7 @@ export default function Footer() {
                                     <a
                                         href="#"
                                         className="hover:text-white transition-colors cursor-pointer block py-1 text-sm"
+                                        aria-label={`Access ${item}`}
                                     >
                                         {item}
                                     </a>
@@ -111,36 +118,16 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* Newsletter Section */}
-                <div className="border-t border-gray-800 pt-6 md:pt-8 mb-6 md:mb-8">
-                    <div className="max-w-md text-left">
-                        <h4 className="font-medium mb-3 text-white text-base md:text-lg">Stay Updated</h4>
-                        <p className="text-sm text-gray-400 mb-4">
-                            Get the latest insights on AI and automation in Africa.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-2 sm:gap-0">
-                            <input
-                                type="email"
-                                placeholder="Enter your email"
-                                className="flex-1 px-3 py-3 sm:py-2 bg-gray-800 border border-gray-700 rounded-lg sm:rounded-l-lg sm:rounded-r-none text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 text-sm"
-                            />
-                            <button className="px-6 py-3 sm:py-2 bg-blue-600 text-white rounded-lg sm:rounded-l-none sm:rounded-r-lg hover:bg-blue-700 transition-colors cursor-pointer text-sm font-medium">
-                                Subscribe
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
                 {/* Bottom Section */}
                 <div className="border-t border-gray-800 pt-6 md:pt-8 text-center text-sm">
                     <p className="text-gray-400 mb-3 md:mb-2">
                         &copy; 2024 WE Org. All rights reserved.
                     </p>
                     <div className="grid grid-cols-2 md:flex md:flex-row md:justify-center md:space-x-6 gap-4 md:gap-0 text-xs text-gray-500 font-serif">
-                        <a href="#" className="hover:text-gray-400 transition-colors cursor-pointer">Privacy Policy</a>
-                        <a href="#" className="hover:text-gray-400 transition-colors cursor-pointer">Terms of Service</a>
-                        <a href="#" className="hover:text-gray-400 transition-colors cursor-pointer">Cookie Policy</a>
-                        <a href="#" className="hover:text-gray-400 transition-colors cursor-pointer">Accessibility</a>
+                        <a href="#" className="hover:text-gray-400 transition-colors cursor-pointer" aria-label="Read our Privacy Policy">Privacy Policy</a>
+                        <a href="#" className="hover:text-gray-400 transition-colors cursor-pointer" aria-label="Read our Terms of Service">Terms of Service</a>
+                        <a href="#" className="hover:text-gray-400 transition-colors cursor-pointer" aria-label="Read our Cookie Policy">Cookie Policy</a>
+                        <a href="#" className="hover:text-gray-400 transition-colors cursor-pointer" aria-label="View our Accessibility Statement">Accessibility</a>
                     </div>
                 </div>
             </div>

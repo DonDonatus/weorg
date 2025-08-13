@@ -54,37 +54,40 @@ export default function About() {
     return (
         <>
             {/* Main About Section */}
-            <section className="py-16 md:py-20 bg-white relative">
+            <section className="py-16 md:py-20 bg-white dark:bg-gray-900 relative">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
                         {/* Left side - Main Message */}
                         <div data-aos="fade-right" data-aos-delay="200">
-                            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-slate-900">
+                            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-slate-900 dark:text-white">
                                 Ghana&apos;s Premier AI Research &amp; Automation Company
                             </h2>
 
-                            <p className="text-base md:text-lg text-slate-600 leading-relaxed mb-6 md:mb-8">
+                            <p className="text-base md:text-lg text-slate-600 dark:text-gray-300 leading-relaxed mb-6 md:mb-8">
                                 We build intelligent agents that streamline operations in government and enterprise - driven by local talent and real-world impact.
                             </p>
 
-                            <button className="btn-primary group mb-6 md:mb-8">
+                            <button
+                                className="btn-primary group mb-6 md:mb-8"
+                                aria-label="Explore our AI solutions and services"
+                            >
                                 <span>Explore Our Solutions</span>
-                                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                             </button>
                         </div>
 
                         {/* Right side - Vision */}
                         <div className="relative" data-aos="fade-left" data-aos-delay="400">
-                            <div className="rounded-2xl p-6 md:p-8 text-white shadow-xl relative bg-gradient-to-br from-gray-600 to-slate-700">
+                            <div className="rounded-2xl p-6 md:p-8 text-white shadow-xl relative bg-gradient-to-br from-gray-600 to-slate-700 dark:from-blue-900 dark:to-slate-800">
                                 <div className="w-10 h-10 md:w-12 md:h-12 bg-white/20 rounded-xl flex items-center justify-center mb-4 md:mb-6">
                                     <Target className="w-5 h-5 md:w-6 md:h-6 text-white" />
                                 </div>
                                 <h3 className="text-xl font-serif uppercase font-semibold md:text-2xl mb-3 md:mb-4">Our Mission</h3>
-                                <p className="text-blue-100 font-serif leading-relaxed text-base md:text-lg mb-4 md:mb-6">
+                                <p className="text-blue-100 dark:text-blue-200 font-serif leading-relaxed text-base md:text-lg mb-4 md:mb-6">
                                     To transform how African organizations operate by combining cutting-edge AI with deep local understanding.
                                 </p>
                                 <div className="pt-4 md:pt-6 border-t border-white/20">
-                                    <p className="text-xs md:text-sm text-blue-200">
+                                    <p className="text-xs md:text-sm text-blue-200 dark:text-blue-300">
                                         &ldquo;Technology that works for Africa, built by Africa.&rdquo;
                                     </p>
                                 </div>
@@ -94,7 +97,7 @@ export default function About() {
                 </div>
 
                 {/* Section Divider */}
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-600 to-transparent"></div>
             </section>
 
             {/* 
@@ -115,7 +118,7 @@ export default function About() {
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" role="list" aria-label="Core AI services">
                         {features.map((feature, index) => {
                             const IconComponent = feature.icon
                             return (
@@ -124,6 +127,8 @@ export default function About() {
                                     className="group bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl p-6 shadow-lg hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-300 border border-slate-700 hover:-translate-y-1"
                                     data-aos="fade-up"
                                     data-aos-delay={400 + (index * 150)}
+                                    role="listitem"
+                                    aria-label={`${feature.title}: ${feature.description}`}
                                 >
                                     {/* Icon */}
                                     <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg bg-gradient-to-r from-blue-600 to-purple-600">
@@ -151,30 +156,29 @@ export default function About() {
                 </div>
             </section>
 
-
             {/* News Highlights / Current Initiatives Section */}
-            <section className="py-16 md:py-20 bg-white relative overflow-hidden">
+            <section className="py-16 md:py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="text-center mb-12" data-aos="fade-up" data-aos-delay="200">
-                        <h3 className="text-2xl font-serif uppercase md:text-3xl lg:text-4xl font-bold text-slate-900 mb-3 relative">
+                        <h3 className="text-2xl font-serif uppercase md:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-3 relative">
                             News Highlights
                             {/* Tech Underline */}
                             <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-emerald-500 rounded-full"></div>
                         </h3>
-                        <p className="text-slate-600 text-sm md:text-base max-w-3xl mx-auto">
+                        <p className="text-slate-600 dark:text-gray-300 text-sm md:text-base max-w-3xl mx-auto">
                             Stay updated with our latest developments and ongoing projects
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto" role="list" aria-label="Current initiatives and news highlights">
                         {/* GNSS AI Fellowship */}
-                        <div className="group bg-white rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200 hover:-translate-y-1 relative overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                        <div className="group bg-white dark:bg-gray-800 rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-gray-700 hover:-translate-y-1 relative overflow-hidden" data-aos="fade-up" data-aos-delay="400" role="listitem">
                             {/* Tech Glow Effect */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-blue-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div className="absolute inset-0 bg-gradient-to-r from-blue-50/50 to-purple-50/50 dark:from-blue-900/20 dark:to-purple-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                             {/* Tech Corner Brackets */}
-                            <div className="absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 border-blue-400 rounded-tl-lg"></div>
-                            <div className="absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 border-purple-400 rounded-br-lg"></div>
+                            <div className="absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 border-blue-400 dark:border-blue-300 rounded-tl-lg"></div>
+                            <div className="absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 border-purple-400 dark:border-purple-300 rounded-br-lg"></div>
 
                             <div className="relative z-10">
                                 <div className="flex items-center mb-4">
@@ -183,13 +187,13 @@ export default function About() {
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                                         </svg>
                                     </div>
-                                    <h4 className="text-base sm:text-lg font-semibold text-slate-900">GNSS AI Fellowship</h4>
+                                    <h4 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white">GNSS AI Fellowship</h4>
                                 </div>
-                                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                                <p className="text-slate-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
                                     Flagship fellowship program training AI researchers in Ghana, focusing on GNSS and AI integration.
                                 </p>
-                                <div className="pt-3 border-t border-slate-200">
-                                    <span className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200/50 rounded-full text-xs font-medium text-blue-700 relative">
+                                <div className="pt-3 border-t border-slate-200 dark:border-gray-600">
+                                    <span className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/50 dark:to-purple-900/50 border border-blue-200/50 dark:border-blue-600/50 rounded-full text-xs font-medium text-blue-700 dark:text-blue-300 relative">
                                         <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
                                         Active Program
 
@@ -199,13 +203,13 @@ export default function About() {
                         </div>
 
                         {/* AI in Public Sector Pilots */}
-                        <div className="group bg-white rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200 hover:-translate-y-1 relative overflow-hidden" data-aos="fade-up" data-aos-delay="600">
+                        <div className="group bg-white dark:bg-gray-800 rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-gray-700 hover:-translate-y-1 relative overflow-hidden" data-aos="fade-up" data-aos-delay="600" role="listitem">
                             {/* Tech Glow Effect */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-emerald-50/50 to-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div className="absolute inset-0 bg-gradient-to-r from-emerald-50/50 to-blue-50/50 dark:from-emerald-900/20 dark:to-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                             {/* Tech Corner Brackets */}
-                            <div className="absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 border-emerald-400 rounded-tl-lg"></div>
-                            <div className="absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 border-blue-400 rounded-br-lg"></div>
+                            <div className="absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 border-emerald-400 dark:border-emerald-300 rounded-tl-lg"></div>
+                            <div className="absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 border-blue-400 dark:border-blue-300 rounded-br-lg"></div>
 
                             <div className="relative z-10">
                                 <div className="flex items-center mb-4">
@@ -214,13 +218,13 @@ export default function About() {
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                         </svg>
                                     </div>
-                                    <h4 className="text-base sm:text-lg font-semibold text-slate-900">Public Sector Pilots</h4>
+                                    <h4 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white">Public Sector Pilots</h4>
                                 </div>
-                                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                                <p className="text-slate-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
                                     Collaborating with government agencies to pilot AI solutions in public services.
                                 </p>
-                                <div className="pt-3 border-t border-slate-200">
-                                    <span className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-emerald-50 to-blue-50 border border-emerald-200/50 rounded-full text-xs font-medium text-emerald-700">
+                                <div className="pt-3 border-t border-slate-200 dark:border-gray-600">
+                                    <span className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-emerald-50 to-blue-50 dark:from-emerald-900/50 dark:to-blue-900/50 border border-emerald-200/50 dark:border-emerald-600/50 rounded-full text-xs font-medium text-emerald-700 dark:text-emerald-300">
                                         <div className="w-2 h-2 bg-emerald-500 rounded-full mr-2"></div>
                                         Pilot Phase
                                     </span>
@@ -229,13 +233,13 @@ export default function About() {
                         </div>
 
                         {/* Twi NLP Model */}
-                        <div className="group bg-white rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200 hover:-translate-y-1 relative overflow-hidden" data-aos="fade-up" data-aos-delay="800">
+                        <div className="group bg-white dark:bg-gray-800 rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-gray-700 hover:-translate-y-1 relative overflow-hidden" data-aos="fade-up" data-aos-delay="800" role="listitem">
                             {/* Tech Glow Effect */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-orange-50/50 to-red-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div className="absolute inset-0 bg-gradient-to-r from-orange-50/50 to-red-50/50 dark:from-orange-900/20 dark:to-red-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                             {/* Tech Corner Brackets */}
-                            <div className="absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 border-orange-400 rounded-tl-lg"></div>
-                            <div className="absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 border-red-400 rounded-br-lg"></div>
+                            <div className="absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 border-orange-400 dark:border-orange-300 rounded-tl-lg"></div>
+                            <div className="absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 border-red-400 dark:border-red-300 rounded-br-lg"></div>
 
                             <div className="relative z-10">
                                 <div className="flex items-center mb-4">
@@ -244,13 +248,13 @@ export default function About() {
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                                         </svg>
                                     </div>
-                                    <h4 className="text-base sm:text-lg font-semibold text-slate-900">Twi NLP Model</h4>
+                                    <h4 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white">Twi NLP Model</h4>
                                 </div>
-                                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                                <p className="text-slate-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
                                     Developing advanced NLP capabilities for Twi language, enabling AI systems to understand local Ghanaian dialects.
                                 </p>
-                                <div className="pt-3 border-t border-slate-200">
-                                    <span className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200/50 rounded-full text-xs font-medium text-orange-700">
+                                <div className="pt-3 border-t border-slate-200 dark:border-gray-600">
+                                    <span className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/50 dark:to-red-900/50 border border-orange-200/50 dark:border-orange-600/50 rounded-full text-xs font-medium text-orange-700 dark:text-orange-300">
                                         <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
                                         In Progress
                                     </span>
@@ -311,7 +315,7 @@ export default function About() {
                                     </div>
 
                                     {/* Enhanced Navigation */}
-                                    <div className="flex justify-center space-x-3 sm:space-x-4">
+                                    <div className="flex justify-center space-x-3 sm:space-x-4" role="tablist" aria-label="Testimonial navigation">
                                         {testimonials.map((_, index) => (
                                             <button
                                                 key={index}
@@ -320,6 +324,9 @@ export default function About() {
                                                     ? 'scale-110'
                                                     : 'hover:scale-105'
                                                     }`}
+                                                role="tab"
+                                                aria-selected={activeTestimonial === index}
+                                                aria-label={`View testimonial ${index + 1} of ${testimonials.length}`}
                                             >
                                                 <div className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 ${activeTestimonial === index
                                                     ? 'bg-gradient-to-r from-blue-400 to-purple-400 shadow-lg shadow-blue-400/50'

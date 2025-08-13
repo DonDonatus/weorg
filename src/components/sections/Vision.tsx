@@ -41,24 +41,24 @@ export default function Vision() {
                 </div>
 
                 {/* Cards */}
-                <div className="grid md:grid-cols-3 gap-6">
+                <div className="grid md:grid-cols-3 gap-6" role="list" aria-label="Ways to engage with WE Org">
                     {[
                         {
-                            icon: <Users className="w-7 h-7 text-white" />,
+                            icon: <Users className="w-7 h-7 text-white" aria-hidden="true" />,
                             title: "Partner With Us",
                             text: "Collaborate on AI solutions and scale your impact across Africa.",
                             color: "from-blue-600 to-purple-600",
                             btn: "Get Started"
                         },
                         {
-                            icon: <BookOpen className="w-7 h-7 text-white" />,
+                            icon: <BookOpen className="w-7 h-7 text-white" aria-hidden="true" />,
                             title: "Apply to Fellowship",
                             text: "Join our research program and shape the future of AI in Africa.",
                             color: "from-purple-600 to-pink-600",
                             btn: "Apply Now"
                         },
                         {
-                            icon: <Calendar className="w-7 h-7 text-white" />,
+                            icon: <Calendar className="w-7 h-7 text-white" aria-hidden="true" />,
                             title: "Request a Demo",
                             text: "See AI in action and discover its transformative potential.",
                             color: "from-emerald-600 to-teal-600",
@@ -70,6 +70,8 @@ export default function Vision() {
                             className="group bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl p-6 shadow-lg hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-300 border border-slate-700 hover:-translate-y-1"
                             data-aos="fade-up"
                             data-aos-delay={400 + (i * 200)}
+                            role="listitem"
+                            aria-label={`${item.title}: ${item.text}`}
                         >
                             <div className={`w-14 h-14 rounded-xl bg-gradient-to-r ${item.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                                 {item.icon}
@@ -78,9 +80,12 @@ export default function Vision() {
                                 {item.title}
                             </h3>
                             <p className="text-gray-400 leading-relaxed text-sm mb-4">{item.text}</p>
-                            <button className="btn-white group">
+                            <button
+                                className="btn-white group"
+                                aria-label={`${item.btn} for ${item.title}`}
+                            >
                                 <span>{item.btn}</span>
-                                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                             </button>
                         </div>
                     ))}

@@ -1,5 +1,11 @@
-'use client'
+import type { Metadata } from 'next'
 
+export const metadata: Metadata = {
+  title: 'Schedule Demo - WE Org | See AI That Works For Your People',
+  description: 'Experience a personalized demonstration of how our AI agents can transform your operations, reduce wait times, and enhance service delivery.',
+}
+
+'use client'
 
 import { useState } from 'react'
 import {

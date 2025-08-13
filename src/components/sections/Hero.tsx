@@ -260,10 +260,10 @@ export default function Hero() {
                         {/* Enhanced Text Background Overlay */}
                         <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-slate-950/50 via-slate-950/30 to-transparent rounded-3xl -m-8 pointer-events-none backdrop-blur-sm"></div>
                         
-                        {/* Enhanced Main Headline with Optimized Mobile Typography */}
+                        {/* Enhanced Main Headline with Optimized Desktop Typography */}
                         <div className="mt-8 sm:mt-4 md:mt-6 lg:mt-8 space-y-6 sm:space-y-4 md:space-y-6 lg:space-y-8">
                             <div className="space-y-3 sm:space-y-2" data-aos="fade-up" data-aos-delay="400">
-                                <h1 className="text-2xl font-serif uppercase sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white leading-tight sm:leading-tight md:leading-tight lg:leading-tight drop-shadow-2xl">
+                                <h1 className="text-2xl font-serif uppercase sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-white leading-tight sm:leading-tight md:leading-tight lg:leading-tight drop-shadow-2xl">
                                     <span className="block drop-shadow-lg transition-all duration-700 hover:scale-105 hover:text-cyan-100 mb-2 sm:mb-0">
                                         Simplifying
                                     </span>
@@ -276,41 +276,45 @@ export default function Hero() {
                                 </h1>
                             </div>
 
-                            <div className="space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-5 max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-2xl mx-auto lg:mx-0" data-aos="fade-up" data-aos-delay="600">
-                                <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-slate-200 leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed drop-shadow-lg font-light">
+                            <div className="space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-5 max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto lg:mx-0" data-aos="fade-up" data-aos-delay="600">
+                                <p className="text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl 2xl:text-2xl text-slate-200 leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed drop-shadow-lg font-light">
                                     We create AI-powered automation agents that streamline operations for governments and enterprises.
                                 </p>
                             </div>
                         </div>
 
-                        {/* Enhanced CTA Buttons with Mobile Typography */}
+                        {/* Enhanced CTA Buttons with Optimized Desktop Typography */}
                         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 lg:gap-6 justify-center lg:justify-start" data-aos="fade-up" data-aos-delay="800">
                             <button 
-                                className="btn-primary group w-full sm:w-auto transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 text-sm sm:text-base md:text-lg"
+                                className="btn-primary group w-full sm:w-auto transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl"
                                 onMouseEnter={() => setIsHovering(true)}
                                 onMouseLeave={() => setIsHovering(false)}
+                                aria-label="Explore our AI solutions and services"
                             >
                                 <span className="flex items-center justify-center lg:justify-start">
-                                    <Play className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 mr-1.5 sm:mr-2 group-hover:scale-110 transition-transform" />
-                                    Launch Platform
+                                    <Play className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-5 lg:h-5 mr-1.5 sm:mr-2 group-hover:scale-110 transition-transform" aria-hidden="true" />
+                                    Explore Our Solutions
                                 </span>
                             </button>
                             <Link href="/learnmore" className="w-full sm:w-auto">
-                                <button className="btn-white w-full transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/25 group text-sm sm:text-base md:text-lg">
+                                <button 
+                                    className="btn-white w-full transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/25 group text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl"
+                                    aria-label="Learn more about partnering with us"
+                                >
                                     <span className="flex items-center justify-center">
-                                        Explore Technology
+                                       Partner With Us
                                     </span>
                                 </button>
                             </Link>
                         </div>
 
-                        {/* Enhanced Tech Stats with Mobile Typography */}
-                        <div className="hidden sm:block pt-4 sm:pt-6 md:pt-8 lg:pt-10 pb-8 sm:pb-0 border-t border-slate-700/50" data-aos="fade-up" data-aos-delay="1000">
-                            <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
-                                <p className="text-xs sm:text-sm md:text-base text-slate-300 font-medium text-center lg:text-left">
+                        {/* Enhanced Tech Stats with Optimized Desktop Typography */}
+                        <div className="hidden sm:block pt-3 sm:pt-4 md:pt-6 lg:pt-6 xl:pt-8 pb-6 sm:pb-0 border-t border-slate-700/50" data-aos="fade-up" data-aos-delay="1000">
+                            <div className="space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-4 xl:space-y-5">
+                                <p className="text-xs sm:text-sm md:text-sm lg:text-sm xl:text-base text-slate-300 font-medium text-center lg:text-left">
                                     Powered by advanced AI technology
                                 </p>
-                                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
+                                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-4 xl:gap-5">
                                     {stats.map((stat, index) => (
                                         <div 
                                             key={index} 
@@ -318,15 +322,15 @@ export default function Hero() {
                                             data-aos="zoom-in"
                                             data-aos-delay={1200 + (index * 100)}
                                         >
-                                            <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold mb-1 sm:mb-2">
+                                            <div className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl 2xl:text-3xl font-bold mb-0.5 sm:mb-1 lg:mb-1">
                                                 <span className={`${stat.color} group-hover:drop-shadow-lg transition-all duration-300`}>
                                                     {stat.value}
                                                 </span>
                                             </div>
-                                            <div className="text-lg sm:text-xl md:text-2xl text-slate-400 font-medium mb-0.5 sm:mb-1">
+                                            <div className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl text-slate-400 font-medium mb-0.5 sm:mb-0.5 lg:mb-1">
                                                 {stat.icon}
                                             </div>
-                                            <div className="text-xs sm:text-sm md:text-base text-slate-400 font-medium">
+                                            <div className="text-xs sm:text-xs md:text-sm lg:text-sm xl:text-base text-slate-400 font-medium">
                                                 {stat.label}
                                             </div>
                                         </div>
@@ -337,8 +341,8 @@ export default function Hero() {
                     </div>
 
                     {/* Right Content - Enhanced Tech Dashboard (Mobile Second) */}
-                    <div className={`relative ${isVisible ? "animate-slide-up" : "opacity-0"} w-full max-w-sm sm:max-w-md mx-auto lg:max-w-none lg:mx-0 order-2 lg:order-last`} data-aos="fade-left" data-aos-delay="400">
-                        <div className="relative bg-slate-900/90 backdrop-blur-2xl rounded-3xl sm:rounded-3xl p-4 sm:p-5 md:p-6 lg:p-8 border border-cyan-500/30 shadow-2xl sm:shadow-3xl shadow-cyan-500/20 overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-cyan-500/30">
+                    <div className={`relative ${isVisible ? "animate-slide-up" : "opacity-0"} w-full max-w-sm sm:max-w-md mx-auto lg:max-w-md xl:max-w-lg order-2 lg:order-last`} data-aos="fade-left" data-aos-delay="400">
+                        <div className="relative bg-slate-900/90 backdrop-blur-2xl rounded-3xl sm:rounded-3xl p-4 sm:p-5 md:p-6 lg:p-5 xl:p-6 border border-cyan-500/30 shadow-2xl sm:shadow-3xl shadow-cyan-500/20 overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-cyan-500/30">
                             {/* Enhanced Holographic Border Effect */}
                             <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-cyan-500/30 via-blue-500/30 to-purple-500/30 opacity-60"></div>
                             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-transparent via-cyan-500/15 to-transparent"></div>
@@ -348,62 +352,64 @@ export default function Hero() {
 
                             {/* Content */}
                             <div className="relative z-10">
-                                                                 {/* Enhanced Header with Mobile Typography */}
-                                 <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4 lg:space-x-5 mt-1 sm:mt-2 md:mt-3 lg:mt-6 mb-3 sm:mb-4 md:mb-5 lg:mb-8">
+                                                                 {/* Enhanced Header with Optimized Desktop Typography */}
+                                 <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4 lg:space-x-3 xl:space-x-4 mt-1 sm:mt-2 md:mt-3 lg:mt-3 xl:mt-4 mb-3 sm:mb-4 md:mb-5 lg:mb-4 xl:mb-6">
                                      <div className="relative flex-shrink-0">
-                                         <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-14 lg:h-14 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl flex items-center justify-center shadow-xl sm:shadow-2xl shadow-cyan-500/30 transform transition-all duration-300 hover:scale-110 hover:rotate-3">
-                                             <Cpu className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-7 lg:h-7 text-white" />
+                                         <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-10 xl:w-12 lg:h-10 xl:h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-xl xl:rounded-2xl flex items-center justify-center shadow-xl sm:shadow-2xl shadow-cyan-500/30 transform transition-all duration-300 hover:scale-110 hover:rotate-3">
+                                             <Cpu className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-5 xl:w-6 lg:h-5 xl:h-6 text-white" />
                                          </div>
-                                         <div className="absolute -top-0.5 -right-0.5 sm:-top-1 sm:-right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 lg:w-3 lg:h-3 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50"></div>
+                                         <div className="absolute -top-0.5 -right-0.5 sm:-top-1 sm:-right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 lg:w-2 xl:w-2.5 lg:h-2 xl:h-2.5 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50"></div>
                                      </div>
                                      <div className="flex-1 min-w-0 text-left">
-                                         <h3 className="font-bold text-white text-xs sm:text-sm md:text-base lg:text-xl xl:text-2xl mb-0.5 sm:mb-1 leading-tight">
+                                         <h3 className="font-bold text-white text-xs sm:text-sm md:text-base lg:text-base xl:text-lg mb-0.5 sm:mb-1 leading-tight">
                                              AI Operations Center
                                          </h3>
-                                         <p className="text-cyan-300 text-xs sm:text-sm md:text-base leading-tight">
+                                         <p className="text-cyan-300 text-xs sm:text-sm md:text-base lg:text-xs xl:text-sm leading-tight">
                                              Real-time system monitoring
                                          </p>
                                      </div>
                                  </div>
 
                                                                  {/* Enhanced Interactive Metrics with Mobile Typography */}
-                                 <div className="space-y-1.5 sm:space-y-2 md:space-y-3 lg:space-y-5">
-                                     {metrics.map((metric, index) => {
-                                         const IconComponent = metric.icon;
-                                         const isActive = index === activeMetric;
+                                                                 <div className="space-y-1.5 sm:space-y-2 md:space-y-3 lg:space-y-3 xl:space-y-4" role="tablist" aria-label="System metrics">
+                                    {metrics.map((metric, index) => {
+                                        const IconComponent = metric.icon;
+                                        const isActive = index === activeMetric;
 
-                                         return (
-                                             <div
-                                                 key={index}
-                                                 className={`p-1.5 sm:p-2 md:p-3 lg:p-5 rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl transition-all duration-500 transform cursor-pointer ${
-                                                     isActive
-                                                         ? `bg-gradient-to-r ${metric.bgColor} border-2 border-cyan-400/60 shadow-xl sm:shadow-2xl shadow-cyan-500/30 scale-105`
-                                                         : "bg-slate-800/60 hover:bg-slate-800/80 border border-slate-700/60 hover:border-slate-600/60 hover:scale-102"
-                                                 }`}
-                                                 onClick={() => handleMetricClick(index)}
-                                                 role="button"
-                                                 tabIndex={0}
-                                                 onKeyDown={(e) => {
-                                                     if (e.key === 'Enter' || e.key === ' ') {
-                                                         handleMetricClick(index);
-                                                     }
-                                                 }}
-                                                 data-aos="fade-up"
-                                                 data-aos-delay={600 + (index * 150)}
-                                             >
+                                        return (
+                                            <div
+                                                key={index}
+                                                className={`p-1.5 sm:p-2 md:p-3 lg:p-3 xl:p-4 rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-xl xl:rounded-2xl transition-all duration-500 transform cursor-pointer ${
+                                                    isActive
+                                                        ? `bg-gradient-to-r ${metric.bgColor} border-2 border-cyan-400/60 shadow-xl sm:shadow-2xl shadow-cyan-500/30 scale-105`
+                                                        : "bg-slate-800/60 hover:bg-slate-800/80 border border-slate-700/60 hover:border-slate-600/60 hover:scale-102"
+                                                }`}
+                                                onClick={() => handleMetricClick(index)}
+                                                role="tab"
+                                                aria-selected={isActive}
+                                                aria-label={`${metric.label}: ${metric.value}`}
+                                                tabIndex={0}
+                                                onKeyDown={(e) => {
+                                                    if (e.key === 'Enter' || e.key === ' ') {
+                                                        handleMetricClick(index);
+                                                    }
+                                                }}
+                                                data-aos="fade-up"
+                                                data-aos-delay={600 + (index * 150)}
+                                            >
                                                  <div className="flex items-center justify-between">
-                                                     <div className="flex items-center space-x-1.5 sm:space-x-2 md:space-x-3 lg:space-x-5 min-w-0 flex-1">
-                                                         <div className={`w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center transition-all duration-500 flex-shrink-0 ${
+                                                     <div className="flex items-center space-x-1.5 sm:space-x-2 md:space-x-3 lg:space-x-3 xl:space-x-4 min-w-0 flex-1">
+                                                         <div className={`w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-10 xl:w-11 lg:h-10 xl:h-11 rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-xl xl:rounded-2xl flex items-center justify-center transition-all duration-500 flex-shrink-0 ${
                                                              isActive
                                                                  ? "bg-gradient-to-r from-cyan-500 to-blue-600 shadow-xl sm:shadow-2xl shadow-cyan-500/30"
                                                                  : "bg-slate-700 hover:bg-slate-600"
                                                          }`}>
-                                                             <IconComponent className={`w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 ${
+                                                             <IconComponent className={`w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-5 xl:w-6 lg:h-5 xl:h-6 ${
                                                                  isActive ? "text-white" : "text-slate-400"
                                                              }`} />
                                                          </div>
                                                          <div className="min-w-0 flex-1">
-                                                             <span className={`font-semibold text-xs sm:text-sm md:text-base block truncate ${
+                                                             <span className={`font-semibold text-xs sm:text-sm md:text-base lg:text-sm xl:text-base block truncate ${
                                                                  isActive ? "text-white" : "text-slate-300"
                                                              }`}>
                                                                  {metric.label}
@@ -413,7 +419,7 @@ export default function Hero() {
                                                              </p>
                                                          </div>
                                                      </div>
-                                                     <span className={`font-bold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl ${metric.color} ${
+                                                     <span className={`font-bold text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl ${metric.color} ${
                                                          isActive ? "animate-pulse" : ""
                                                      } flex-shrink-0 ml-1.5 sm:ml-2`}>
                                                          {metric.value}
@@ -425,22 +431,22 @@ export default function Hero() {
                                  </div>
 
                                                                  {/* Enhanced System Status with Mobile Typography */}
-                                 <div className="mt-3 sm:mt-4 md:mt-5 lg:mt-8 pt-2 sm:pt-3 md:pt-4 lg:pt-7 border-t border-slate-700/50">
+                                 <div className="mt-3 sm:mt-4 md:mt-5 lg:mt-5 xl:mt-6 pt-2 sm:pt-3 md:pt-4 lg:pt-4 xl:pt-5 border-t border-slate-700/50">
                                      <div className="flex flex-col space-y-1.5 sm:space-y-2 md:space-y-3 lg:space-y-0">
                                          <div className="flex items-center justify-between">
-                                             <div className="flex items-center space-x-1.5 sm:space-x-2 md:space-x-3 lg:space-x-4">
+                                             <div className="flex items-center space-x-1.5 sm:space-x-2 md:space-x-3 lg:space-x-3 xl:space-x-4">
                                                  <div className="flex space-x-0.5 sm:space-x-1 md:space-x-1.5">
                                                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50"></div>
                                                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50" style={{ animationDelay: '0.2s' }}></div>
                                                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50" style={{ animationDelay: '0.4s' }}></div>
                                                  </div>
-                                                 <span className="text-xs sm:text-sm md:text-base text-green-400 font-medium truncate">
+                                                 <span className="text-xs sm:text-sm md:text-base lg:text-sm xl:text-base text-green-400 font-medium truncate">
                                                      All Systems Operational
                                                  </span>
                                              </div>
                                              <div className="flex items-center space-x-1 sm:space-x-1.5 md:space-x-2 text-cyan-400">
                                                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-cyan-400 rounded-full animate-pulse shadow-lg shadow-cyan-400/50"></div>
-                                                 <span className="text-xs sm:text-sm md:text-base font-medium">
+                                                 <span className="text-xs sm:text-sm md:text-base lg:text-sm xl:text-base font-medium">
                                                      Live Feed
                                                  </span>
                                              </div>

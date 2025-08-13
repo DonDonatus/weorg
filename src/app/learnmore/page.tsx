@@ -1,3 +1,10 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Learn More - WE Org | AI Solutions That Deliver Real Impact',
+  description: 'We build intelligent automation for governments and enterprises across Africa, enhancing productivity while maintaining human oversight.',
+}
+
 'use client'
 import { useState, useEffect } from 'react'
 import {
