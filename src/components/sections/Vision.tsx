@@ -1,74 +1,89 @@
-import { ArrowRight, Calendar, BookOpen, Users, Zap } from 'lucide-react'
+"use client";
+
+import { ArrowRight, Calendar, BookOpen, Users, Cpu, Brain, Zap } from 'lucide-react';
 
 export default function Vision() {
-  return (
-    <section id="vision" className="py-16 md:py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400 rounded-full filter blur-3xl"></div>
-      </div>
-      
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12 md:mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-4xl font-bold mb-4 md:mb-5 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-            Let&apos;s Build the Future Together
-          </h2>
-          <p className="text-lg md:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8 md:mb-10 px-4">
-            Join us in transforming how African organizations operate. Choose your path to make a difference.
-          </p>
-        </div>
-
-        {/* CTA Buttons Section */}
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-4 md:gap-5 mb-8 md:mb-10">
-            {/* Partner With Us */}
-            <div className="group bg-white/10 backdrop-blur-sm rounded-2xl p-5 md:p-5 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:transform hover:scale-105">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-14 md:h-14 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mb-4 md:mb-5 shadow-lg">
-                <Users className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" />
-              </div>
-              <h3 className="text-base sm:text-lg md:text-lg font-semibold font-serif text-white mb-3 md:mb-3">Partner With Us</h3>
-              <p className="text-gray-300 mb-4 md:mb-5 leading-relaxed text-sm md:text-sm font-serif ">
-                Collaborate on innovative AI solutions and expand your impact across Africa.
-              </p>
-              <button className="btn-white group w-full">
-                <span>Get Started</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+    return (
+        <section id="vision" className="relative py-16 md:py-20 bg-slate-900 overflow-hidden">
+            {/* Animated AI Network Background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+                <div className="absolute inset-0 opacity-10 animate-[pulse_8s_infinite] bg-[radial-gradient(circle_at_20%_30%,rgba(0,255,255,0.3),transparent_40%),radial-gradient(circle_at_80%_70%,rgba(168,85,247,0.3),transparent_40%)]"></div>
+                <svg className="absolute inset-0 w-full h-full opacity-20">
+                    <defs>
+                        <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.7" />
+                            <stop offset="100%" stopColor="#a855f7" stopOpacity="0.7" />
+                        </linearGradient>
+                    </defs>
+                    {Array.from({ length: 15 }).map((_, i) => (
+                        <line
+                            key={i}
+                            x1={`${Math.random() * 100}%`}
+                            y1={`${Math.random() * 100}%`}
+                            x2={`${Math.random() * 100}%`}
+                            y2={`${Math.random() * 100}%`}
+                            stroke="url(#lineGrad)"
+                            strokeWidth="0.5"
+                            className="animate-[pulse_4s_infinite]"
+                        />
+                    ))}
+                </svg>
             </div>
+            {/* Content */}
+            <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-16">
+                    <h2 className="text-3xl font-serif uppercase sm:text-4xl lg:text-5xl font-semibold mb-6 text-white tracking-tight">
+                        Let&apos;s Build the AI Future Together
+                    </h2>
+                    <p className="text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                        We&apos;re reimagining Africa&apos;s digital transformation — one intelligent solution at a time.
+                    </p>
+                </div>
 
-            {/* Apply to Fellowship */}
-            <div className="group bg-white/10 backdrop-blur-sm rounded-2xl p-5 md:p-5 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:transform hover:scale-105">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-14 md:h-14 bg-gradient-to-r from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mb-4 md:mb-5 shadow-lg">
-                <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" />
-              </div>
-              <h3 className="text-base sm:text-lg md:text-lg font-semibold font-serif text-white mb-3 md:mb-3">Apply to Fellowship</h3>
-              <p className="text-gray-300 mb-4 md:mb-5 leading-relaxed text-sm md:text-sm font-serif">
-                Join our research program and work on cutting-edge AI projects for Africa.
-              </p>
-              <button className="btn-white group w-full">
-                <span>Apply Now</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+                {/* Cards */}
+                <div className="grid md:grid-cols-3 gap-6">
+                    {[
+                        {
+                            icon: <Users className="w-7 h-7 text-white" />,
+                            title: "Partner With Us",
+                            text: "Collaborate on AI solutions and scale your impact across Africa.",
+                            color: "from-blue-600 to-purple-600",
+                            btn: "Get Started"
+                        },
+                        {
+                            icon: <BookOpen className="w-7 h-7 text-white" />,
+                            title: "Apply to Fellowship",
+                            text: "Join our research program and shape the future of AI in Africa.",
+                            color: "from-purple-600 to-pink-600",
+                            btn: "Apply Now"
+                        },
+                        {
+                            icon: <Calendar className="w-7 h-7 text-white" />,
+                            title: "Request a Demo",
+                            text: "See AI in action and discover its transformative potential.",
+                            color: "from-emerald-600 to-teal-600",
+                            btn: "Schedule Demo"
+                        }
+                    ].map((item, i) => (
+                        <div
+                            key={i}
+                            className="group bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl p-6 shadow-lg hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-300 border border-slate-700 hover:-translate-y-1"
+                        >
+                            <div className={`w-14 h-14 rounded-xl bg-gradient-to-r ${item.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                                {item.icon}
+                            </div>
+                            <h3 className="text-base sm:text-lg font-semibold mb-3 text-white">
+                                {item.title}
+                            </h3>
+                            <p className="text-gray-400 leading-relaxed text-sm mb-4">{item.text}</p>
+                            <button className="btn-white group">
+                                <span>{item.btn}</span>
+                                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                            </button>
+                        </div>
+                    ))}
+                </div>
             </div>
-
-            {/* Request a Demo */}
-            <div className="group bg-white/10 backdrop-blur-sm rounded-2xl p-5 md:p-5 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:transform hover:scale-105">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-14 md:h-14 bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mb-4 md:mb-5 shadow-lg">
-                <Calendar className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" />
-              </div>
-              <h3 className="text-base sm:text-lg md:text-lg font-semibold font-serif text-white mb-3 md:mb-3">Request a Demo</h3>
-              <p className="text-gray-300 mb-4 md:mb-5 leading-relaxed text-sm md:text-sm font-serif">
-                See our AI solutions in action and discover how they can transform your operations.
-              </p>
-              <button className="btn-white group w-full">
-                <span>Schedule Demo</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
+        </section>
+    );
 }

@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
-import { Inter, Schibsted_Grotesk } from 'next/font/google'
+import { Inter, Spline_Sans_Mono } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
-const schibstedGrotesk = Schibsted_Grotesk({ 
+const splineSansMono = Spline_Sans_Mono({ 
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
-  variable: '--font-schibsted-grotesk'
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-jetBrainsMono'
 })
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${schibstedGrotesk.variable}`}>{children}</body>
+      <body className={`${inter.className} ${splineSansMono.variable}`}>{children}</body>
     </html>
   )
 }

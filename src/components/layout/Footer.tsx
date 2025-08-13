@@ -11,9 +11,9 @@ export default function Footer() {
     ];
 
     const company = [
-        "About Us", 
-        "Our Vision", 
-        "Contact", 
+        "About Us",
+        "Our Vision",
+        "Contact",
         "Careers"
     ];
 
