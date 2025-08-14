@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
-import { Inter, Spline_Sans_Mono } from 'next/font/google'
+import { Inter, Overpass_Mono } from 'next/font/google'
 import './globals.css'
 import AOSProvider from '@/components/AOSProvider'
 
 const inter = Inter({ subsets: ['latin'] })
-const splineSansMono = Spline_Sans_Mono({ 
+const overpassMono = Overpass_Mono({ 
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-jetBrainsMono'
+  weight: ['400', '500', '700'],
+  variable: '--font-mono'
 })
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${splineSansMono.variable}`}>
+      <body className={`${inter.className} ${overpassMono.variable}`}>
         <AOSProvider>
           {children}
         </AOSProvider>

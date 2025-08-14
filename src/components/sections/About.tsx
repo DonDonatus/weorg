@@ -273,7 +273,7 @@ export default function About() {
                             {/* Section Header */}
                             <div className="mb-8 md:mb-12" data-aos="fade-up" data-aos-delay="200">
 
-                                <h3 className="text-xl font-serif uppercase sm:text-2xl md:text-3xl font-semibold text-white mb-2 md:mb-3">
+                                <h3 className="text-2xl font-serif uppercase md:text-3xl lg:text-4xl font-semibold text-white mb-2 md:mb-3">
                                     Client Feedback
                                 </h3>
                                 <p className="text-slate-300 text-sm md:text-base">
