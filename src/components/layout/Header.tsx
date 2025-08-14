@@ -46,7 +46,7 @@ const navItems: NavItem[] = [
         type: 'dropdown',
         children: [
             { label: 'Careers/Fellowship', href: '#careers', type: 'link' },
-            { label: 'Contact Us', href: '#contact', type: 'link' }
+            { label: 'Contact Us', href: '/contact', type: 'link' }
         ]
     }
 ]
