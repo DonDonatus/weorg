@@ -304,7 +304,7 @@ export default function ContactPage() {
                             data-aos-duration="1000"
                         >
                             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
-                                Ready to TransformAfrica Together?
+                                Ready to Transform Africa Together?
                             </h2>
                             <p className="text-lg sm:text-xl text-slate-200 mb-8 sm:mb-10 max-w-2xl mx-auto">
                                 Partner with us, join our team, or explore AI solutions. Let&apos;s build the future together.
