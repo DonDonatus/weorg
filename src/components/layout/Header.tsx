@@ -37,7 +37,7 @@ const navItems: NavItem[] = [
         type: 'dropdown',
         children: [
             { label: 'AI Research Lab', href: '#ai-lab', type: 'link' },
-            { label: 'News & Updates', href: '#news', type: 'link' }
+            { label: 'News & Updates', href: '/news', type: 'link' }
         ]
     },
     {
@@ -45,7 +45,7 @@ const navItems: NavItem[] = [
         href: '#join',
         type: 'dropdown',
         children: [
-            { label: 'Careers/Fellowship', href: '#careers', type: 'link' },
+            { label: 'Careers/Fellowship', href: '/Fellowship', type: 'link' },
             { label: 'Contact Us', href: '/contact', type: 'link' }
         ]
     }
