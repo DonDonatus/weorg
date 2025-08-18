@@ -19,7 +19,7 @@ const navItems: NavItem[] = [
         type: 'dropdown',
         children: [
             { label: 'About Us', href: '/about', type: 'link' },
-            { label: 'Board & Governance', href: '#governance', type: 'link' }
+            { label: 'Board & Governance', href: '/leadership', type: 'link' }
         ]
     },
     {
@@ -45,13 +45,13 @@ const navItems: NavItem[] = [
         href: '#join',
         type: 'dropdown',
         children: [
-            { label: 'Careers/Fellowship', href: '/Fellowship', type: 'link' },
+            { label: 'Careers/fellowship', href: '/fellowship', type: 'link' },
             { label: 'Contact Us', href: '/contact', type: 'link' }
         ]
     }
 ]
 
-export default function Header() {
+export default function Nav() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isScrolled, setIsScrolled] = useState(false)
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null)

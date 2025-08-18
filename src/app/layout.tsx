@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
-import { Inter, Overpass_Mono } from 'next/font/google'
+import { Inter, IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
 import AOSProvider from '@/components/AOSProvider'
 
 const inter = Inter({ subsets: ['latin'] })
-const overpassMono = Overpass_Mono({ 
+  const ibmPlexMono = IBM_Plex_Mono({ 
   subsets: ['latin'],
   weight: ['400', '500', '700'],
   variable: '--font-mono'
@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${overpassMono.variable}`}>
+      <body className={`${inter.className} ${ibmPlexMono.variable}`}>
         <AOSProvider>
           {children}
         </AOSProvider>
