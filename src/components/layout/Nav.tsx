@@ -28,7 +28,7 @@ const navItems: NavItem[] = [
         type: 'dropdown',
         children: [
             { label: 'Solutions', href: '/solutions', type: 'link' },
-            { label: 'Partnerships', href: '/partnership', type: 'link' }
+            { label: 'Partnerships', href: '/partnership', type: 'link' },
         ]
     },
     {
@@ -260,7 +260,7 @@ export default function Nav() {
                             {/* Get Started Button */}
                             <div className="ml-6">
                                 <button
-                                    onClick={() => scrollToSection('contact')}
+                                    onClick={() => scrollToSection('/contact')}
                                     className="navbar-btn-primary"
                                     aria-label="Get started with WE Org"
                                 >
@@ -353,7 +353,7 @@ export default function Nav() {
                             {/* Mobile Get Started Button */}
                             <div className="pt-4">
                                 <button
-                                    onClick={() => scrollToSection('contact')}
+                                    onClick={() => scrollToSection('/contact')}
                                     className="navbar-btn-primary w-full py-3 text-base font-medium flex items-center justify-center space-x-2"
                                     aria-label="Get started with WE Org on mobile"
                                 >

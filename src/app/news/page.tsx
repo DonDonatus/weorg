@@ -16,7 +16,7 @@ export default function NewsPage() {
             <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-md z-50">
                 Skip to main content
             </a>
-            <main className="min-h-screen" role="main">
+            <main id="main-content" className="min-h-screen" role="main">
                 <Nav />
                 <section className="relative pt-12 sm:pt-16 md:pt-20 lg:pt-24 pb-12 sm:pb-16 md:pb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 overflow-hidden" aria-labelledby="news-hero-heading">
                     <div className="absolute inset-0" aria-hidden="true">

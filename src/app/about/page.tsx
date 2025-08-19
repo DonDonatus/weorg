@@ -2,8 +2,7 @@ import type { Metadata } from 'next'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import AOSProvider from '@/components/AOSProvider'
-import { ArrowRight, Users, Target, Heart, Shield, Globe, Award, TrendingUp } from 'lucide-react'
-import Link from 'next/link'
+import { Users, Target, Heart, Shield, Globe } from 'lucide-react'
 
 export const metadata: Metadata = {
     title: 'About Us - WE Org | Building AI Solutions for Africa',
@@ -18,12 +17,6 @@ export default function AboutPage() {
         { title: 'Build to Empower', description: 'Our technology exists to give people more control and opportunity', icon: Users },
         { title: 'Responsible AI', description: 'We develop AI that is ethical, transparent, and beneficial to society', icon: Shield },
         { title: 'Africa First', description: 'We build solutions specifically for African contexts and challenges', icon: Globe }
-    ]
-
-    const impactStats = [
-        { number: '100+', label: 'Students Trained', icon: Users },
-        { number: '3', label: 'Active Pilots', icon: TrendingUp },
-        { number: '5', label: 'AI Agents Developed', icon: Award }
     ]
 
     return (

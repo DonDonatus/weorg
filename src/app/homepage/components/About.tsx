@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from 'react'
-import { Zap, CheckCircle, Users, ArrowRight, Globe, Target, Heart, Brain, Building2, FileCheck, MessageSquare } from 'lucide-react'
+import { ArrowRight, Brain, Building2, FileCheck, MessageSquare, Target } from 'lucide-react'
 
 export default function About() {
     const [activeTestimonial, setActiveTestimonial] = useState(0)

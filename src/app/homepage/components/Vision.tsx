@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar, BookOpen, Users, Zap } from 'lucide-react'
+import { ArrowRight, Calendar, BookOpen, Users } from 'lucide-react'
 
 export default function Vision() {
     return (

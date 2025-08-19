@@ -1,20 +1,48 @@
-"use client";
+'use client'
 
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { useEffect, useState } from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
-export default function AOSProvider({ children }: { children: React.ReactNode }) {
+interface AOSProviderProps {
+    children: React.ReactNode
+}
+
+export default function AOSProvider({ children }: AOSProviderProps) {
+    const [isAOSLoaded, setIsAOSLoaded] = useState(false)
+
     useEffect(() => {
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out-cubic',
-            once: true,
-            offset: 100,
-            delay: 0,
-            anchorPlacement: 'top-bottom',
-        });
-    }, []);
+        const loadAOS = async () => {
+            try {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-out-cubic',
+                    once: true, 
+                    offset: 100,
+                    delay: 0,
+                    disable: 'mobile', 
+                    throttleDelay: 99,
+                })
+                setIsAOSLoaded(true)
+            } catch (error) {
+                console.warn('AOS failed to load:', error)
+                setIsAOSLoaded(true) // Continue without AOS
+            }
+        }
 
-    return <>{children}</>;
+        const timer = setTimeout(loadAOS, 100)
+        
+        return () => {
+            clearTimeout(timer)
+            if (isAOSLoaded) {
+                AOS.refresh()
+            }
+        }
+    }, [isAOSLoaded])
+
+    return (
+        <div className={isAOSLoaded ? 'aos-loaded' : ''}>
+            {children}
+        </div>
+    )
 }

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import AOSProvider from '@/components/AOSProvider'
-import { Users, Award, ArrowRight, Building2, Globe, Target, Heart } from 'lucide-react'
+import { Users, Award, ArrowRight, Building2 } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata: Metadata = {

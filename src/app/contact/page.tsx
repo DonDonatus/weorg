@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import AOSProvider from '@/components/AOSProvider'
-import { Mail, MapPin, Phone, Send, Building2, Users, GraduationCap, Search, MessageCircle, Globe, Linkedin, Twitter, Github } from 'lucide-react'
+import { Mail, MapPin, Phone, Send, Building2, Users, GraduationCap, Search, MessageCircle, Linkedin, Twitter, Github } from 'lucide-react'
 
 export const metadata: Metadata = {
     title: 'Contact Us - WE Org | Let\'s Build Together',
@@ -267,7 +267,7 @@ export default function ContactPage() {
                             Ready to Transform Africa Together?
                         </h2>
                         <p className="text-lg md:text-xl text-slate-300 mb-8">
-                            Partner with us, join our team, or explore AI solutions. Let's build the future together.
+                            Partner with us, join our team, or explore AI solutions. Let&rsquo;s build the future together.
                         </p>
                         <div className="flex justify-center gap-4 flex-wrap">
                             <a

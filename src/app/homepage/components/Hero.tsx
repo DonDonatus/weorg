@@ -1,13 +1,13 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { CheckCircle, ArrowRight, Zap, Users, Clock, Cpu, Database, Network, Shield, Play, ChevronRight } from "lucide-react";
+import { Users, Clock, Cpu, Database, Network, Shield, Play, Zap } from "lucide-react";
 import Link from "next/link";
 
 export default function Hero() {
     const [isVisible, setIsVisible] = useState(false);
     const [activeMetric, setActiveMetric] = useState(0);
-    const [isHovering, setIsHovering] = useState(false);
+
     const [scrollY, setScrollY] = useState(0);
 
     const metrics = [
@@ -59,13 +59,13 @@ export default function Hero() {
 
     useEffect(() => {
         setIsVisible(true);
-        
+
         const interval = setInterval(() => {
             setActiveMetric((prev) => (prev + 1) % metrics.length);
         }, 4000);
-        
+
         window.addEventListener('scroll', handleScroll);
-        
+
         return () => {
             clearInterval(interval);
             window.removeEventListener('scroll', handleScroll);
@@ -81,7 +81,7 @@ export default function Hero() {
             {/* Enhanced Tech Background with Parallax */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 {/* Parallax Grid */}
-                <div 
+                <div
                     className="absolute inset-0 opacity-10 sm:opacity-20 transition-transform duration-1000"
                     style={{
                         transform: `translateY(${scrollY * 0.1}px)`,
@@ -90,7 +90,7 @@ export default function Hero() {
                             linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px)
                         `,
                         backgroundSize: '50px 50px'
-                    }} 
+                    }}
                 />
 
                 {/* Enhanced Floating Tech Orbs */}
@@ -99,13 +99,13 @@ export default function Hero() {
                         key={i}
                         className="absolute rounded-full animate-float"
                         style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                            width: `${Math.random() * 6 + 3}px`,
-                            height: `${Math.random() * 6 + 3}px`,
-                            background: `radial-gradient(circle, rgba(0, 255, 255, ${0.15 + Math.random() * 0.25}) 0%, transparent 70%)`,
-                            animationDelay: `${Math.random() * 5}s`,
-                            animationDuration: `${4 + Math.random() * 3}s`,
+                            left: `${(i * 7) % 100}%`,
+                            top: `${(i * 11) % 100}%`,
+                            width: `${(i % 6) + 3}px`,
+                            height: `${(i % 6) + 3}px`,
+                            background: `radial-gradient(circle, rgba(0, 255, 255, ${0.15 + (i % 25) * 0.01}) 0%, transparent 70%)`,
+                            animationDelay: `${(i % 5)}s`,
+                            animationDuration: `${4 + (i % 3)}s`,
                             transform: `translateY(${scrollY * 0.05}px)`
                         }}
                         data-aos="zoom-in"
@@ -134,9 +134,9 @@ export default function Hero() {
                 </div>
 
                 {/* Enhanced Circuit Board Pattern */}
-                <svg 
-                    className="absolute inset-0 w-full h-full opacity-10 sm:opacity-20 transition-transform duration-1000" 
-                    viewBox="0 0 1200 800" 
+                <svg
+                    className="absolute inset-0 w-full h-full opacity-10 sm:opacity-20 transition-transform duration-1000"
+                    viewBox="0 0 1200 800"
                     fill="none"
                     style={{ transform: `translateY(${scrollY * 0.03}px)` }}
                 >
@@ -199,7 +199,7 @@ export default function Hero() {
                             r="5"
                             fill="url(#techGrad)"
                             className="animate-pulse"
-                            style={{ 
+                            style={{
                                 animationDelay: `${i * 0.15}s`,
                                 animationDuration: `${2 + (i % 3)}s`
                             }}
@@ -209,7 +209,7 @@ export default function Hero() {
                 </svg>
 
                 {/* Enhanced Holographic Data Matrix */}
-                <div 
+                <div
                     className="absolute right-0 top-0 w-80 h-80 opacity-10 sm:opacity-20 transition-transform duration-1000"
                     style={{ transform: `translateY(${scrollY * 0.06}px)` }}
                 >
@@ -217,15 +217,14 @@ export default function Hero() {
                         {Array.from({ length: 64 }).map((_, i) => (
                             <div
                                 key={i}
-                                className={`h-full rounded-sm transition-all duration-700 animate-pulse ${
-                                    i % 4 === 0 ? 'bg-cyan-400/50' :
-                                    i % 4 === 1 ? 'bg-blue-400/50' :
-                                    i % 4 === 2 ? 'bg-purple-400/50' :
-                                    'bg-transparent'
-                                }`}
+                                className={`h-full rounded-sm transition-all duration-700 animate-pulse ${i % 4 === 0 ? 'bg-cyan-400/50' :
+                                        i % 4 === 1 ? 'bg-blue-400/50' :
+                                            i % 4 === 2 ? 'bg-purple-400/50' :
+                                                'bg-transparent'
+                                    }`}
                                 style={{
                                     animationDelay: `${i * 0.08}s`,
-                                    transform: `scaleY(${0.4 + Math.random() * 0.6})`
+                                    transform: `scaleY(${0.4 + (i % 6) * 0.1})`
                                 }}
                             />
                         ))}
@@ -259,7 +258,7 @@ export default function Hero() {
                     <div className={`${isVisible ? "animate-fade-in" : "opacity-0"} space-y-6 sm:space-y-8 lg:space-y-12 text-center lg:text-left relative z-20 order-1`} data-aos="fade-right" data-aos-delay="200">
                         {/* Enhanced Text Background Overlay */}
                         <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-slate-950/50 via-slate-950/30 to-transparent rounded-3xl -m-8 pointer-events-none backdrop-blur-sm"></div>
-                        
+
                         {/* Enhanced Main Headline with Optimized Desktop Typography */}
                         <div className="mt-8 sm:mt-4 md:mt-6 lg:mt-8 space-y-6 sm:space-y-4 md:space-y-6 lg:space-y-8">
                             <div className="space-y-3 sm:space-y-2" data-aos="fade-up" data-aos-delay="400">
@@ -285,10 +284,8 @@ export default function Hero() {
 
                         {/* Enhanced CTA Buttons with Optimized Desktop Typography */}
                         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 lg:gap-6 justify-center lg:justify-start" data-aos="fade-up" data-aos-delay="800">
-                            <button 
+                            <button
                                 className="btn-primary group w-full sm:w-auto transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl"
-                                onMouseEnter={() => setIsHovering(true)}
-                                onMouseLeave={() => setIsHovering(false)}
                                 aria-label="Explore our AI solutions and services"
                             >
                                 <span className="flex items-center justify-center lg:justify-start">
@@ -297,12 +294,12 @@ export default function Hero() {
                                 </span>
                             </button>
                             <Link href="/learnmore" className="w-full sm:w-auto">
-                                <button 
+                                <button
                                     className="btn-white w-full transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/25 group text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl"
                                     aria-label="Learn more about partnering with us"
                                 >
                                     <span className="flex items-center justify-center">
-                                       Partner With Us
+                                        Partner With Us
                                     </span>
                                 </button>
                             </Link>
@@ -316,8 +313,8 @@ export default function Hero() {
                                 </p>
                                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-4 xl:gap-5">
                                     {stats.map((stat, index) => (
-                                        <div 
-                                            key={index} 
+                                        <div
+                                            key={index}
                                             className="text-center group cursor-pointer transform transition-all duration-300 hover:scale-110"
                                             data-aos="zoom-in"
                                             data-aos-delay={1200 + (index * 100)}
@@ -346,32 +343,32 @@ export default function Hero() {
                             {/* Enhanced Holographic Border Effect */}
                             <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-cyan-500/30 via-blue-500/30 to-purple-500/30 opacity-60"></div>
                             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-transparent via-cyan-500/15 to-transparent"></div>
-                            
+
                             {/* Animated Border Glow */}
                             <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
 
                             {/* Content */}
                             <div className="relative z-10">
-                                                                 {/* Enhanced Header with Optimized Desktop Typography */}
-                                 <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4 lg:space-x-3 xl:space-x-4 mt-1 sm:mt-2 md:mt-3 lg:mt-3 xl:mt-4 mb-3 sm:mb-4 md:mb-5 lg:mb-4 xl:mb-6">
-                                     <div className="relative flex-shrink-0">
-                                         <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-10 xl:w-12 lg:h-10 xl:h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-xl xl:rounded-2xl flex items-center justify-center shadow-xl sm:shadow-2xl shadow-cyan-500/30 transform transition-all duration-300 hover:scale-110 hover:rotate-3">
-                                             <Cpu className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-5 xl:w-6 lg:h-5 xl:h-6 text-white" />
-                                         </div>
-                                         <div className="absolute -top-0.5 -right-0.5 sm:-top-1 sm:-right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 lg:w-2 xl:w-2.5 lg:h-2 xl:h-2.5 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50"></div>
-                                     </div>
-                                     <div className="flex-1 min-w-0 text-left">
-                                         <h3 className="font-bold text-white text-xs sm:text-sm md:text-base lg:text-base xl:text-lg mb-0.5 sm:mb-1 leading-tight">
-                                             AI Operations Center
-                                         </h3>
-                                         <p className="text-cyan-300 text-xs sm:text-sm md:text-base lg:text-xs xl:text-sm leading-tight">
-                                             Real-time system monitoring
-                                         </p>
-                                     </div>
-                                 </div>
+                                {/* Enhanced Header with Optimized Desktop Typography */}
+                                <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4 lg:space-x-3 xl:space-x-4 mt-1 sm:mt-2 md:mt-3 lg:mt-3 xl:mt-4 mb-3 sm:mb-4 md:mb-5 lg:mb-4 xl:mb-6">
+                                    <div className="relative flex-shrink-0">
+                                        <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-10 xl:w-12 lg:h-10 xl:h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-xl xl:rounded-2xl flex items-center justify-center shadow-xl sm:shadow-2xl shadow-cyan-500/30 transform transition-all duration-300 hover:scale-110 hover:rotate-3">
+                                            <Cpu className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-5 xl:w-6 lg:h-5 xl:h-6 text-white" />
+                                        </div>
+                                        <div className="absolute -top-0.5 -right-0.5 sm:-top-1 sm:-right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 lg:w-2 xl:w-2.5 lg:h-2 xl:h-2.5 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50"></div>
+                                    </div>
+                                    <div className="flex-1 min-w-0 text-left">
+                                        <h3 className="font-bold text-white text-xs sm:text-sm md:text-base lg:text-base xl:text-lg mb-0.5 sm:mb-1 leading-tight">
+                                            AI Operations Center
+                                        </h3>
+                                        <p className="text-cyan-300 text-xs sm:text-sm md:text-base lg:text-xs xl:text-sm leading-tight">
+                                            Real-time system monitoring
+                                        </p>
+                                    </div>
+                                </div>
 
-                                                                 {/* Enhanced Interactive Metrics with Mobile Typography */}
-                                                                 <div className="space-y-1.5 sm:space-y-2 md:space-y-3 lg:space-y-3 xl:space-y-4" role="tablist" aria-label="System metrics">
+                                {/* Enhanced Interactive Metrics with Mobile Typography */}
+                                <div className="space-y-1.5 sm:space-y-2 md:space-y-3 lg:space-y-3 xl:space-y-4" role="tablist" aria-label="System metrics">
                                     {metrics.map((metric, index) => {
                                         const IconComponent = metric.icon;
                                         const isActive = index === activeMetric;
@@ -379,11 +376,10 @@ export default function Hero() {
                                         return (
                                             <div
                                                 key={index}
-                                                className={`p-1.5 sm:p-2 md:p-3 lg:p-3 xl:p-4 rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-xl xl:rounded-2xl transition-all duration-500 transform cursor-pointer ${
-                                                    isActive
+                                                className={`p-1.5 sm:p-2 md:p-3 lg:p-3 xl:p-4 rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-xl xl:rounded-2xl transition-all duration-500 transform cursor-pointer ${isActive
                                                         ? `bg-gradient-to-r ${metric.bgColor} border-2 border-cyan-400/60 shadow-xl sm:shadow-2xl shadow-cyan-500/30 scale-105`
                                                         : "bg-slate-800/60 hover:bg-slate-800/80 border border-slate-700/60 hover:border-slate-600/60 hover:scale-102"
-                                                }`}
+                                                    }`}
                                                 onClick={() => handleMetricClick(index)}
                                                 role="tab"
                                                 aria-selected={isActive}
@@ -397,73 +393,69 @@ export default function Hero() {
                                                 data-aos="fade-up"
                                                 data-aos-delay={600 + (index * 150)}
                                             >
-                                                 <div className="flex items-center justify-between">
-                                                     <div className="flex items-center space-x-1.5 sm:space-x-2 md:space-x-3 lg:space-x-3 xl:space-x-4 min-w-0 flex-1">
-                                                         <div className={`w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-10 xl:w-11 lg:h-10 xl:h-11 rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-xl xl:rounded-2xl flex items-center justify-center transition-all duration-500 flex-shrink-0 ${
-                                                             isActive
-                                                                 ? "bg-gradient-to-r from-cyan-500 to-blue-600 shadow-xl sm:shadow-2xl shadow-cyan-500/30"
-                                                                 : "bg-slate-700 hover:bg-slate-600"
-                                                         }`}>
-                                                             <IconComponent className={`w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-5 xl:w-6 lg:h-5 xl:h-6 ${
-                                                                 isActive ? "text-white" : "text-slate-400"
-                                                             }`} />
-                                                         </div>
-                                                         <div className="min-w-0 flex-1">
-                                                             <span className={`font-semibold text-xs sm:text-sm md:text-base lg:text-sm xl:text-base block truncate ${
-                                                                 isActive ? "text-white" : "text-slate-300"
-                                                             }`}>
-                                                                 {metric.label}
-                                                             </span>
-                                                             <p className="text-xs sm:text-sm text-slate-400 mt-0.5 sm:mt-1 hidden sm:block truncate">
-                                                                 {metric.description}
-                                                             </p>
-                                                         </div>
-                                                     </div>
-                                                     <span className={`font-bold text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl ${metric.color} ${
-                                                         isActive ? "animate-pulse" : ""
-                                                     } flex-shrink-0 ml-1.5 sm:ml-2`}>
-                                                         {metric.value}
-                                                     </span>
-                                                 </div>
-                                             </div>
-                                         );
-                                     })}
-                                 </div>
+                                                <div className="flex items-center justify-between">
+                                                    <div className="flex items-center space-x-1.5 sm:space-x-2 md:space-x-3 lg:space-x-3 xl:space-x-4 min-w-0 flex-1">
+                                                        <div className={`w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-10 xl:w-11 lg:h-10 xl:h-11 rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-xl xl:rounded-2xl flex items-center justify-center transition-all duration-500 flex-shrink-0 ${isActive
+                                                                ? "bg-gradient-to-r from-cyan-500 to-blue-600 shadow-xl sm:shadow-2xl shadow-cyan-500/30"
+                                                                : "bg-slate-700 hover:bg-slate-600"
+                                                            }`}>
+                                                            <IconComponent className={`w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-5 xl:w-6 lg:h-5 xl:h-6 ${isActive ? "text-white" : "text-slate-400"
+                                                                }`} />
+                                                        </div>
+                                                        <div className="min-w-0 flex-1">
+                                                            <span className={`font-semibold text-xs sm:text-sm md:text-base lg:text-sm xl:text-base block truncate ${isActive ? "text-white" : "text-slate-300"
+                                                                }`}>
+                                                                {metric.label}
+                                                            </span>
+                                                            <p className="text-xs sm:text-sm text-slate-400 mt-0.5 sm:mt-1 hidden sm:block truncate">
+                                                                {metric.description}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <span className={`font-bold text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl ${metric.color} ${isActive ? "animate-pulse" : ""
+                                                        } flex-shrink-0 ml-1.5 sm:ml-2`}>
+                                                        {metric.value}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
 
-                                                                 {/* Enhanced System Status with Mobile Typography */}
-                                 <div className="mt-3 sm:mt-4 md:mt-5 lg:mt-5 xl:mt-6 pt-2 sm:pt-3 md:pt-4 lg:pt-4 xl:pt-5 border-t border-slate-700/50">
-                                     <div className="flex flex-col space-y-1.5 sm:space-y-2 md:space-y-3 lg:space-y-0">
-                                         <div className="flex items-center justify-between">
-                                             <div className="flex items-center space-x-1.5 sm:space-x-2 md:space-x-3 lg:space-x-3 xl:space-x-4">
-                                                 <div className="flex space-x-0.5 sm:space-x-1 md:space-x-1.5">
-                                                     <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50"></div>
-                                                     <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50" style={{ animationDelay: '0.2s' }}></div>
-                                                     <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50" style={{ animationDelay: '0.4s' }}></div>
-                                                 </div>
-                                                 <span className="text-xs sm:text-sm md:text-base lg:text-sm xl:text-base text-green-400 font-medium truncate">
-                                                     All Systems Operational
-                                                 </span>
-                                             </div>
-                                             <div className="flex items-center space-x-1 sm:space-x-1.5 md:space-x-2 text-cyan-400">
-                                                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-cyan-400 rounded-full animate-pulse shadow-lg shadow-cyan-400/50"></div>
-                                                 <span className="text-xs sm:text-sm md:text-base lg:text-sm xl:text-base font-medium">
-                                                     Live Feed
-                                                 </span>
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
+                                {/* Enhanced System Status with Mobile Typography */}
+                                <div className="mt-3 sm:mt-4 md:mt-5 lg:mt-5 xl:mt-6 pt-2 sm:pt-3 md:pt-4 lg:pt-4 xl:pt-5 border-t border-slate-700/50">
+                                    <div className="flex flex-col space-y-1.5 sm:space-y-2 md:space-y-3 lg:space-y-0">
+                                        <div className="flex items-center justify-between">
+                                            <div className="flex items-center space-x-1.5 sm:space-x-2 md:space-x-3 lg:space-x-3 xl:space-x-4">
+                                                <div className="flex space-x-0.5 sm:space-x-1 md:space-x-1.5">
+                                                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50"></div>
+                                                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50" style={{ animationDelay: '0.2s' }}></div>
+                                                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50" style={{ animationDelay: '0.4s' }}></div>
+                                                </div>
+                                                <span className="text-xs sm:text-sm md:text-base lg:text-sm xl:text-base text-green-400 font-medium truncate">
+                                                    All Systems Operational
+                                                </span>
+                                            </div>
+                                            <div className="flex items-center space-x-1 sm:space-x-1.5 md:space-x-2 text-cyan-400">
+                                                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-cyan-400 rounded-full animate-pulse shadow-lg shadow-cyan-400/50"></div>
+                                                <span className="text-xs sm:text-sm md:text-base lg:text-sm xl:text-base font-medium">
+                                                    Live Feed
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                 {/* Enhanced Data Flow Indicator with Mobile Typography */}
-                                 <div className="mt-2 sm:mt-3 md:mt-4 lg:mt-6 flex items-center space-x-1.5 sm:space-x-2 md:space-x-3">
-                                     <div className="flex-1 h-1 sm:h-1.5 md:h-2 bg-slate-700 rounded-full overflow-hidden">
-                                         <div 
-                                             className="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full animate-pulse shadow-lg shadow-cyan-500/50" 
-                                             style={{ width: '75%' }}
-                                         ></div>
-                                     </div>
-                                     <span className="text-xs sm:text-sm md:text-base text-slate-400 flex-shrink-0">75% Load</span>
-                                 </div>
+                                {/* Enhanced Data Flow Indicator with Mobile Typography */}
+                                <div className="mt-2 sm:mt-3 md:mt-4 lg:mt-6 flex items-center space-x-1.5 sm:space-x-2 md:space-x-3">
+                                    <div className="flex-1 h-1 sm:h-1.5 md:h-2 bg-slate-700 rounded-full overflow-hidden">
+                                        <div
+                                            className="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full animate-pulse shadow-lg shadow-cyan-500/50"
+                                            style={{ width: '75%' }}
+                                        ></div>
+                                    </div>
+                                    <span className="text-xs sm:text-sm md:text-base text-slate-400 flex-shrink-0">75% Load</span>
+                                </div>
                             </div>
                         </div>
                     </div>

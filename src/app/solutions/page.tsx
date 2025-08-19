@@ -153,7 +153,7 @@ export default function SolutionsPage() {
                                     </p>
                                     <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
                                         <Link
-                                            href="/demo"
+                                            href="/contact"
                                             className="btn-primary w-full sm:w-auto min-h-[44px] px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-slate-950 transition-all duration-300"
                                             aria-label="Request a demo of our AI solutions"
                                         >
@@ -461,7 +461,7 @@ export default function SolutionsPage() {
                             data-aos-duration="1000"
                         >
                             <Link
-                                href="/demo"
+                                href="/contact"
                                 className="btn-white group text-base px-6 py-3 w-full sm:w-auto min-h-[44px] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-800 transition-all duration-300"
                                 aria-label="Explore all success stories and case studies"
                             >
