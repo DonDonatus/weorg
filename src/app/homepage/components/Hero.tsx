@@ -4,58 +4,74 @@ import { useState, useEffect, useCallback } from "react";
 import { Users, Clock, Cpu, Database, Network, Shield, Play, Zap } from "lucide-react";
 import Link from "next/link";
 
+// Precomputed values for Floating Tech Orbs to ensure consistency
+const orbStyles = Array.from({ length: 15 }).map((_, i) => ({
+  left: `${(i * 7 + 10) % 100}%`,
+  top: `${(i * 13 + 15) % 100}%`,
+  width: `${3 + (i % 4) + 3}px`,
+  height: `${3 + (i % 3) + 3}px`,
+  background: `radial-gradient(circle, rgba(0, 255, 255, ${0.15 + (i % 5) * 0.05}) 0%, transparent 70%)`,
+  animationDelay: `${(i * 0.3) % 5}s`,
+  animationDuration: `${4 + (i % 3)}s`,
+}));
+
+// Precomputed values for Holographic Data Matrix
+const matrixStyles = Array.from({ length: 64 }).map((_, i) => ({
+  animationDelay: `${i * 0.08}s`,
+  transform: `scaleY(${0.4 + (i % 5) * 0.12})`,
+}));
+
 export default function Hero() {
     const [isVisible, setIsVisible] = useState(false);
     const [activeMetric, setActiveMetric] = useState(0);
 
     const [scrollY, setScrollY] = useState(0);
 
-    const metrics = [
-        {
-            label: "Queue Processing",
-            value: "-87% Wait Time",
-            color: "text-cyan-400",
-            icon: Clock,
-            description: "AI-powered queue optimization",
-            bgColor: "from-cyan-500/20 to-blue-500/20"
-        },
-        {
-            label: "Document Processing",
-            value: "+340% Faster",
-            color: "text-blue-400",
-            icon: Zap,
-            description: "Machine learning document analysis",
-            bgColor: "from-blue-500/20 to-purple-500/20"
-        },
-        {
-            label: "Staff Efficiency",
-            value: "+250% Productivity",
-            color: "text-purple-400",
-            icon: Users,
-            description: "Automated workflow management",
-            bgColor: "from-purple-500/20 to-pink-500/20"
-        },
-        {
-            label: "System Security",
-            value: "99.9% Uptime",
-            color: "text-emerald-400",
-            icon: Shield,
-            description: "Advanced threat protection",
-            bgColor: "from-emerald-500/20 to-cyan-500/20"
-        }
-    ];
+  const metrics = [
+    {
+      label: "Queue Processing",
+      value: "-87% Wait Time",
+      color: "text-cyan-400",
+      icon: Clock,
+      description: "AI-powered queue optimization",
+      bgColor: "from-cyan-500/20 to-blue-500/20",
+    },
+    {
+      label: "Document Processing",
+      value: "+340% Faster",
+      color: "text-blue-400",
+      icon: Zap,
+      description: "Machine learning document analysis",
+      bgColor: "from-blue-500/20 to-purple-500/20",
+    },
+    {
+      label: "Staff Efficiency",
+      value: "+250% Productivity",
+      color: "text-purple-400",
+      icon: Users,
+      description: "Automated workflow management",
+      bgColor: "from-purple-500/20 to-pink-500/20",
+    },
+    {
+      label: "System Security",
+      value: "99.9% Uptime",
+      color: "text-emerald-400",
+      icon: Shield,
+      description: "Advanced threat protection",
+      bgColor: "from-emerald-500/20 to-cyan-500/20",
+    },
+  ];
 
-    const stats = [
-        { value: "15+", label: "Countries", color: "text-cyan-400", icon: "🌍" },
-        { value: "500+", label: "Partners", color: "text-blue-400", icon: "🤝" },
-        { value: "99.9%", label: "Uptime", color: "text-purple-400", icon: "⚡" },
-        { value: "24/7", label: "Support", color: "text-emerald-400", icon: "🛡️" }
-    ];
+  const stats = [
+    { value: "15+", label: "Countries", color: "text-cyan-400", icon: "🌍" },
+    { value: "500+", label: "Partners", color: "text-blue-400", icon: "🤝" },
+    { value: "99.9%", label: "Uptime", color: "text-purple-400", icon: "⚡" },
+    { value: "24/7", label: "Support", color: "text-emerald-400", icon: "🛡️" },
+  ];
 
-    // Optimized useEffect with useCallback
-    const handleScroll = useCallback(() => {
-        setScrollY(window.scrollY);
-    }, []);
+  const handleScroll = useCallback(() => {
+    setScrollY(window.scrollY);
+  }, []);
 
     useEffect(() => {
         setIsVisible(true);
@@ -72,9 +88,9 @@ export default function Hero() {
         };
     }, [metrics.length, handleScroll]);
 
-    const handleMetricClick = (index: number) => {
-        setActiveMetric(index);
-    };
+  const handleMetricClick = (index: number) => {
+    setActiveMetric(index);
+  };
 
     return (
         <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950">
@@ -114,24 +130,24 @@ export default function Hero() {
                     />
                 ))}
 
-                {/* Enhanced Data Streams */}
-                <div className="absolute inset-0">
-                    {Array.from({ length: 6 }).map((_, i) => (
-                        <div
-                            key={i}
-                            className="absolute w-px h-full bg-gradient-to-b from-transparent via-cyan-400 to-transparent animate-pulse"
-                            style={{
-                                left: `${20 + (i * 12)}%`,
-                                animationDelay: `${i * 0.3}s`,
-                                animationDuration: `${2.5 + (i % 2)}s`,
-                                transform: `translateY(${scrollY * 0.08}px)`
-                            }}
-                            data-aos="fade-down"
-                            data-aos-delay={i * 200}
-                            data-aos-duration="1200"
-                        />
-                    ))}
-                </div>
+        {/* Enhanced Data Streams */}
+        <div className="absolute inset-0">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-px h-full bg-gradient-to-b from-transparent via-cyan-400 to-transparent animate-pulse"
+              style={{
+                left: `${20 + i * 12}%`,
+                animationDelay: `${i * 0.3}s`,
+                animationDuration: `${2.5 + (i % 2)}s`,
+                transform: `translateY(${scrollY * 0.08}px)`,
+              }}
+              data-aos="fade-down"
+              data-aos-delay={i * 200}
+              data-aos-duration="1200"
+            />
+          ))}
+        </div>
 
                 {/* Enhanced Circuit Board Pattern */}
                 <svg
@@ -155,40 +171,40 @@ export default function Hero() {
                         </filter>
                     </defs>
 
-                    <g className="animate-dash" filter="url(#techGlow)">
-                        <path
-                            d="M50 100 L200 100 L250 150 L400 150 L450 200 L600 200 L650 250 L800 250 L850 300 L1000 300 L1050 350 L1150 350"
-                            stroke="url(#techGrad)"
-                            strokeWidth="3"
-                            strokeDasharray="20 10"
-                            opacity="0.8"
-                            strokeLinecap="round"
-                        />
-                        <path
-                            d="M100 200 L300 200 L350 250 L500 250 L550 300 L700 300 L750 350 L900 350 L950 400 L1100 400"
-                            stroke="url(#techGrad)"
-                            strokeWidth="2"
-                            strokeDasharray="15 8"
-                            opacity="0.6"
-                            strokeLinecap="round"
-                        />
-                        <path
-                            d="M300 50 L300 150 L300 250 L300 350 L300 450 L300 550 L300 650 L300 750"
-                            stroke="url(#techGrad)"
-                            strokeWidth="2"
-                            strokeDasharray="6 3"
-                            opacity="0.5"
-                            strokeLinecap="round"
-                        />
-                        <path
-                            d="M600 100 L600 200 L600 300 L600 400 L600 500 L600 600 L600 700"
-                            stroke="url(#techGrad)"
-                            strokeWidth="2"
-                            strokeDasharray="6 3"
-                            opacity="0.5"
-                            strokeLinecap="round"
-                        />
-                    </g>
+          <g className="animate-dash" filter="url(#techGlow)">
+            <path
+              d="M50 100 L200 100 L250 150 L400 150 L450 200 L600 200 L650 250 L800 250 L850 300 L1000 300 L1050 350 L1150 350"
+              stroke="url(#techGrad)"
+              strokeWidth="3"
+              strokeDasharray="20 10"
+              opacity="0.8"
+              strokeLinecap="round"
+            />
+            <path
+              d="M100 200 L300 200 L350 250 L500 250 L550 300 L700 300 L750 350 L900 350 L950 400 L1100 400"
+              stroke="url(#techGrad)"
+              strokeWidth="2"
+              strokeDasharray="15 8"
+              opacity="0.6"
+              strokeLinecap="round"
+            />
+            <path
+              d="M300 50 L300 150 L300 250 L300 350 L300 450 L300 550 L300 650 L300 750"
+              stroke="url(#techGrad)"
+              strokeWidth="2"
+              strokeDasharray="6 3"
+              opacity="0.5"
+              strokeLinecap="round"
+            />
+            <path
+              d="M600 100 L600 200 L600 300 L600 400 L600 500 L600 600 L600 700"
+              stroke="url(#techGrad)"
+              strokeWidth="2"
+              strokeDasharray="6 3"
+              opacity="0.5"
+              strokeLinecap="round"
+            />
+          </g>
 
                     {/* Enhanced Circuit Nodes */}
                     {Array.from({ length: 12 }).map((_, i) => (
@@ -231,25 +247,25 @@ export default function Hero() {
                     </div>
                 </div>
 
-                {/* Enhanced Floating Tech Icons */}
-                <div className="absolute inset-0">
-                    {[Cpu, Database, Network, Shield].map((Icon, i) => (
-                        <div
-                            key={i}
-                            className="absolute text-cyan-400/15 sm:text-cyan-400/25 animate-float transition-all duration-1000"
-                            style={{
-                                left: `${25 + (i * 18)}%`,
-                                top: `${35 + (i * 12)}%`,
-                                animationDelay: `${i * 0.6}s`,
-                                animationDuration: `${5 + (i % 2)}s`,
-                                transform: `translateY(${scrollY * 0.04}px)`
-                            }}
-                        >
-                            <Icon size={40 + (i * 2)} />
-                        </div>
-                    ))}
-                </div>
+        {/* Enhanced Floating Tech Icons */}
+        <div className="absolute inset-0">
+          {[Cpu, Database, Network, Shield].map((Icon, i) => (
+            <div
+              key={i}
+              className="absolute text-cyan-400/15 sm:text-cyan-400/25 animate-float transition-all duration-1000"
+              style={{
+                left: `${25 + i * 18}%`,
+                top: `${35 + i * 12}%`,
+                animationDelay: `${i * 0.6}s`,
+                animationDuration: `${5 + (i % 2)}s`,
+                transform: `translateY(${scrollY * 0.04}px)`,
+              }}
+            >
+              <Icon size={40 + i * 2} />
             </div>
+          ))}
+        </div>
+      </div>
 
             {/* Main Content */}
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-12 lg:py-20 z-10">
@@ -462,42 +478,44 @@ export default function Hero() {
                 </div>
             </div>
 
-            {/* Enhanced CSS Animations */}
-            <style jsx>{`
-                @keyframes float {
-                    0%, 100% { 
-                        transform: translateY(0px) rotate(0deg); 
-                    }
-                    50% { 
-                        transform: translateY(-25px) rotate(180deg); 
-                    }
-                }
-                @keyframes dash {
-                    to { 
-                        stroke-dashoffset: -30; 
-                    }
-                }
-                @keyframes glow {
-                    0%, 100% { 
-                        filter: brightness(1) drop-shadow(0 0 5px rgba(0, 255, 255, 0.5));
-                    }
-                    50% { 
-                        filter: brightness(1.2) drop-shadow(0 0 15px rgba(0, 255, 255, 0.8));
-                    }
-                }
-                .animate-float { 
-                    animation: float 8s ease-in-out infinite; 
-                }
-                .animate-dash { 
-                    animation: dash 3s linear infinite; 
-                }
-                .animate-glow { 
-                    animation: glow 4s ease-in-out infinite; 
-                }
-                .hover\\:scale-102:hover { 
-                    transform: scale(1.02); 
-                }
-            `}</style>
-        </section>
-    );
+      {/* Enhanced CSS Animations */}
+      <style jsx>{`
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-25px) rotate(180deg);
+          }
+        }
+        @keyframes dash {
+          to {
+            stroke-dashoffset: -30;
+          }
+        }
+        @keyframes glow {
+          0%,
+          100% {
+            filter: brightness(1) drop-shadow(0 0 5px rgba(0, 255, 255, 0.5));
+          }
+          50% {
+            filter: brightness(1.2) drop-shadow(0 0 15px rgba(0, 255, 255, 0.8));
+          }
+        }
+        .animate-float {
+          animation: float 8s ease-in-out infinite;
+        }
+        .animate-dash {
+          animation: dash 3s linear infinite;
+        }
+        .animate-glow {
+          animation: glow 4s ease-in-out infinite;
+        }
+        .hover\:scale-102:hover {
+          transform: scale(1.02);
+        }
+      `}</style>
+    </section>
+  );
 }
