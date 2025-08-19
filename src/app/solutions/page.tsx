@@ -143,7 +143,7 @@ export default function SolutionsPage() {
                                 <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
                                     <h1
                                         id="hero-heading"
-                                        className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-serif uppercase font-semibold text-white mb-3 sm:mb-4 md:mb-6 lg:mb-8 leading-tight"
+                                        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif uppercase font-semibold text-white mb-3 sm:mb-4 md:mb-6 lg:mb-8 leading-tight"
                                         tabIndex={0}
                                     >
                                         Intelligent <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">Solutions</span>

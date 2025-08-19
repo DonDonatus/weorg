@@ -1,10 +1,20 @@
+import type { Metadata } from 'next'
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import AOSProvider from "@/components/AOSProvider";
 
+export const metadata: Metadata = {
+    title: 'AI Fellowship Program - WE Org | Join Our Mission',
+    description: 'Join our National AI Fellowship program and collaborate with innovators to transform Africa through AI. Build skills, work on real projects, and make lasting impact.',
+    keywords: 'AI fellowship, Ghana AI fellowship, AI training program, AI education, WE Org fellowship',
+}
+
 export default function FellowshipPage() {
     return (
         <AOSProvider>
+            <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-md z-50">
+                Skip to main content
+            </a>
             <main className="min-h-screen" role="main">
                 <Nav />
                 {/* Hero Section */}

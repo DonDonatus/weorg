@@ -1,6 +1,4 @@
-'use client';
-
-import type { JSX } from "react";
+import type { Metadata } from 'next'
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import AOSProvider from "@/components/AOSProvider";
@@ -8,7 +6,13 @@ import { Users, Building2, GraduationCap, Globe, ArrowRight, CheckCircle, Handsh
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function PartnershipPage(): JSX.Element {
+export const metadata: Metadata = {
+    title: 'Strategic Partnerships - WeOrg | AI Innovation Across Africa',
+    description: 'Partner with WeOrg to drive AI innovation across Africa. Collaborate with ministries, universities, startups, and global tech leaders for lasting impact.',
+    keywords: 'AI partnerships, Africa tech collaboration, government partnerships, academic partnerships, enterprise partnerships, AI innovation Africa',
+}
+
+export default function PartnershipPage() {
     const partnerTypes = [
         {
             icon: Building2,
@@ -43,6 +47,9 @@ export default function PartnershipPage(): JSX.Element {
     return (
         <AOSProvider>
             <main className="min-h-screen" role="main">
+                <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-md z-50">
+                    Skip to main content
+                </a>
                 <Nav />
                 <section className="relative pt-12 sm:pt-16 md:pt-20 lg:pt-24 pb-12 sm:pb-16 md:pb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 overflow-hidden" aria-labelledby="hero-heading">
                     <div className="absolute inset-0" aria-hidden="true">
@@ -86,16 +93,16 @@ export default function PartnershipPage(): JSX.Element {
                 </section>
 
                 {/* Partner Types Section */}
-                <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
+                <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden" aria-labelledby="partnership-areas-heading">
                     {/* Background Pattern */}
-                    <div className="absolute inset-0 opacity-5">
+                    <div className="absolute inset-0 opacity-5" aria-hidden="true">
                         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full filter blur-3xl"></div>
                         <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400 rounded-full filter blur-3xl"></div>
                     </div>
 
                     <div className="max-w-6xl mx-auto px-6">
                         <div className="text-center mb-12 sm:mb-16" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                            <h2 className="text-4xl md:text-5xl font-semibold uppercase font-serif text-white mb-4">
+                            <h2 id="partnership-areas-heading" className="text-4xl md:text-5xl font-semibold uppercase font-serif text-white mb-4">
                                 Partnership Areas
                             </h2>
                             <p className="text-lg text-slate-300 max-w-2xl mx-auto">
@@ -151,10 +158,10 @@ export default function PartnershipPage(): JSX.Element {
                 </section>
 
                 {/* Partners Logo Showcase Section */}
-                <section className="py-16 sm:py-20 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 relative overflow-hidden">
+                <section className="py-16 sm:py-20 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 relative overflow-hidden" aria-labelledby="current-partners-heading">
                     <div className="max-w-6xl mx-auto px-4 sm:px-6">
                         <div className="text-center mb-8 sm:mb-10" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold uppercase font-serif text-slate-900 dark:text-white mb-4">
+                            <h2 id="current-partners-heading" className="text-3xl sm:text-4xl md:text-5xl font-semibold uppercase font-serif text-slate-900 dark:text-white mb-4">
                                 Current Partners
                             </h2>
                             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
@@ -164,9 +171,9 @@ export default function PartnershipPage(): JSX.Element {
 
                         <div className="container p-4 sm:p-6 mx-auto w-full max-w-2xl xl:px-0">
                             <div className="flex flex-col justify-center">
-                                <div className="flex flex-wrap justify-center gap-3 sm:gap-5 md:justify-around">
-                                    <div className="pt-2 text-gray-400 dark:text-gray-500">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="90" height="27" className="sm:w-[110px] sm:h-[33px]" fill="none" viewBox="0 0 110 33">
+                                <div className="flex flex-wrap justify-center gap-3 sm:gap-5 md:justify-around" role="list" aria-label="Partner company logos">
+                                    <div className="pt-2 text-gray-400 dark:text-gray-500" role="listitem">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="90" height="27" className="sm:w-[110px] sm:h-[33px]" fill="none" viewBox="0 0 110 33" aria-label="Partner company logo">
                                             <g fill="currentColor" clipPath="url(#clip0)">
                                                 <path fillRule="evenodd" d="M67.776 25.783c-6.323 4.676-15.521 7.167-23.455 7.167-11.114 0-21.079-4.1-28.667-10.923-.575-.536-.077-1.264.651-.843 8.163 4.752 18.243 7.589 28.668 7.589 7.013 0 14.755-1.457 21.884-4.485 1.073-.421 1.954.729.92 1.495z" clipRule="evenodd"></path>
                                                 <path fillRule="evenodd" d="M70.42 22.756c-.804-1.035-5.365-.499-7.396-.23-.613.076-.728-.46-.153-.844 3.64-2.567 9.581-1.8 10.271-.958.69.843-.192 6.822-3.603 9.658-.536.422-1.034.192-.804-.383.766-1.916 2.49-6.17 1.686-7.243z" clipRule="evenodd"></path>
@@ -219,12 +226,12 @@ export default function PartnershipPage(): JSX.Element {
                 </section>
 
                 {/* Why Partner With Us Section */}
-                <div className="overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-16 sm:py-24 lg:py-32">
+                <section className="overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-16 sm:py-24 lg:py-32" aria-labelledby="why-partner-heading">
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 sm:gap-y-16 lg:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                             <div className="lg:pt-4 lg:pr-8" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
                                 <div className="lg:max-w-lg">
-                                    <h2 className="text-base/7 font-semibold text-cyan-400">Strategic Value</h2>
+                                    <h2 id="why-partner-heading" className="text-base/7 font-semibold text-indigo-400">Strategic Value</h2>
                                     <p className="mt-2 text-3xl sm:text-4xl font-semibold tracking-tight text-pretty text-white lg:text-5xl">Why Partner With Us</p>
                                     <p className="mt-4 sm:mt-6 text-base sm:text-lg/8 text-slate-300">We bring unique value to every partnership through our local expertise and proven track record in AI innovation across Africa.</p>
                                     <dl className="mt-8 sm:mt-10 max-w-xl space-y-6 sm:space-y-8 text-sm sm:text-base/7 text-slate-400 lg:max-w-none">
@@ -267,14 +274,23 @@ export default function PartnershipPage(): JSX.Element {
                                     </dl>
                                 </div>
                             </div>
-                            <img width="2432" height="1442" src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png" alt="AI Innovation in Africa" className="w-full max-w-none rounded-xl shadow-xl ring-1 ring-slate-600/50 sm:w-228 md:-ml-4 lg:-ml-0" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000" />
+                            <Image
+                                src="/img/partnership-cover.webp"
+                                alt="Partnership collaboration and innovation"
+                                width={800}
+                                height={600}
+                                className="w-full max-w-none rounded-xl shadow-xl ring-1 ring-slate-600/50 sm:w-228 md:-ml-4 lg:-ml-0 object-contain object-center"
+                                data-aos="fade-left"
+                                data-aos-delay="400"
+                                data-aos-duration="1000"
+                            />
                         </div>
                     </div>
-                </div>
+                </section>
 
                 {/* CTA Section */}
                 <section className="relative py-20 bg-black" aria-labelledby="cta-heading">
-                    <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
                         <div className="absolute top-10 left-10 w-40 h-40 bg-cyan-800/20 rounded-full blur-3xl animate-pulse"></div>
                         <div className="absolute bottom-20 right-16 w-56 h-56 bg-indigo-900/20 rounded-full blur-3xl animate-pulse"></div>
                         <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-cyan-900/20 to-indigo-900/20 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2"></div>
@@ -308,22 +324,6 @@ export default function PartnershipPage(): JSX.Element {
 
                 <Footer />
             </main>
-
-            {/* Custom CSS for animations */}
-            <style jsx global>{`
-                @keyframes spin-slow {
-                    from {
-                        transform: rotate(0deg);
-                    }
-                    to {
-                        transform: rotate(360deg);
-                    }
-                }
-
-                .animate-spin-slow {
-                    animation: spin-slow 20s linear infinite;
-                }
-            `}</style>
         </AOSProvider>
     );
 }

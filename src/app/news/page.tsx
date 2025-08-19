@@ -1,13 +1,21 @@
-'use client';
-import type { JSX } from "react";
+import type { Metadata } from 'next'
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import AOSProvider from "@/components/AOSProvider";
 import FeaturedNews from "@/app/news/components/FeaturedNews";
 
-export default function NewsPage(): JSX.Element {
+export const metadata: Metadata = {
+    title: 'AI News & Updates - WE Org | Latest AI Developments',
+    description: 'Stay updated with the latest developments in artificial intelligence and emerging technologies from WE Org and the broader AI community.',
+    keywords: 'AI news, artificial intelligence updates, AI developments, emerging technologies, WE Org news',
+}
+
+export default function NewsPage() {
     return (
         <AOSProvider>
+            <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-md z-50">
+                Skip to main content
+            </a>
             <main className="min-h-screen" role="main">
                 <Nav />
                 <section className="relative pt-12 sm:pt-16 md:pt-20 lg:pt-24 pb-12 sm:pb-16 md:pb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 overflow-hidden" aria-labelledby="news-hero-heading">
@@ -54,45 +62,6 @@ export default function NewsPage(): JSX.Element {
                 <FeaturedNews />
                 <Footer />
             </main>
-
-            {/* Custom CSS for line clamping and animations */}
-            <style jsx global>{`
-        .line-clamp-2 {
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-
-        @keyframes spin-slow {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-
-        .animate-spin-slow {
-          animation: spin-slow 20s linear infinite;
-        }
-
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0px) translateX(0px);
-            opacity: 0.3;
-          }
-          50% {
-            transform: translateY(-20px) translateX(10px);
-            opacity: 0.6;
-          }
-        }
-
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-      `}</style>
         </AOSProvider>
     );
 }
