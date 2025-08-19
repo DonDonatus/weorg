@@ -1,4 +1,5 @@
 import { ArrowRight, Calendar, BookOpen, Users } from 'lucide-react'
+import Link from 'next/link'
 
 export default function Vision() {
     return (
@@ -35,10 +36,12 @@ export default function Vision() {
                                 <p className="text-slate-300 leading-relaxed text-sm sm:text-base mb-3 sm:mb-4">
                                     Collaborate on innovative AI solutions and expand your impact across Africa.
                                 </p>
+                                <Link href="/partnership">
                                 <button className="btn-white group w-full text-sm py-2">
                                     <span>Get Started</span>
                                     <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                                 </button>
+                                </Link>
                             </div>
                         </div>
                         {/* Apply to Fellowship */}
@@ -54,10 +57,12 @@ export default function Vision() {
                                 <p className="text-slate-300 leading-relaxed text-sm sm:text-base mb-3 sm:mb-4">
                                     Join our research program and work on cutting-edge AI projects for Africa.
                                 </p>
+                                <Link href="/fellowship">
                                 <button className="btn-white group w-full text-sm py-2">
                                     <span>Apply Now</span>
                                     <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                                 </button>
+                                </Link>
                             </div>
                         </div>
 
@@ -74,10 +79,12 @@ export default function Vision() {
                                 <p className="text-slate-300 leading-relaxed text-sm sm:text-base mb-3 sm:mb-4">
                                     See our AI solutions in action and discover how they can transform your operations.
                                 </p>
-                                <button className="btn-white group w-full text-sm py-2">
-                                    <span>Schedule Demo</span>
-                                    <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
-                                </button>
+                                <Link href="/contact">
+                                    <button className="btn-white group w-full text-sm py-2">
+                                        <span>Schedule Demo</span>
+                                        <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
