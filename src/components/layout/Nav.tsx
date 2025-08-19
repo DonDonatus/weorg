@@ -28,7 +28,7 @@ const navItems: NavItem[] = [
         type: 'dropdown',
         children: [
             { label: 'Solutions', href: '/solutions', type: 'link' },
-            { label: 'Partnerships', href: '#partnerships', type: 'link' }
+            { label: 'Partnerships', href: '/partnership', type: 'link' }
         ]
     },
     {
