@@ -29,7 +29,7 @@ const posts = [
 		description:
 			"Introducing our Twi language NLP model built for Ghanaian contexts, enabling search, summarization, and classification in local language.",
 		imageUrl:
-			"https://images.unsplash.com/photo-1518779578993-ec3579fee39f?ixlib=rb-4.0.3&auto=format&fit=crop&w=3270&q=80",
+			"https://elearn.nptel.ac.in/wp-content/uploads/2024/12/Natural-Language-Processing.jpg?v=6848ae6f8e78",
 		date: "Apr 10, 2024",
 		datetime: "2024-04-10",
 		category: { title: "Research", href: "#" },
@@ -86,7 +86,7 @@ const posts = [
 		description:
 			"Our perspective on why inclusive, locally led development is essential for responsible, impactful AI across the continent.",
 		imageUrl:
-			"https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=3270&q=80",
+			"https://media.istockphoto.com/id/1847974699/photo/enthusiastic-businesswoman-sharing-ideas-in-meeting.jpg?s=612x612&w=0&k=20&c=DZ5cVL6QQbq6H0StVIlA7TOcdUc_8cB2FWAZbmj9bYo=",
 		date: "Jul 18, 2024",
 		datetime: "2024-07-18",
 		category: { title: "Press & Media", href: "#" },

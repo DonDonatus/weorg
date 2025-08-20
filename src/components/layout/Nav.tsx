@@ -45,7 +45,7 @@ const navItems: NavItem[] = [
         href: '#join',
         type: 'dropdown',
         children: [
-            { label: 'Careers/fellowship', href: '/fellowship', type: 'link' },
+            { label: 'Careers/Fellowship', href: '/fellowship', type: 'link' },
             { label: 'Contact Us', href: '/contact', type: 'link' }
         ]
     }

@@ -24,6 +24,17 @@ const nextConfig: NextConfig = {
                 port: '',
                 pathname: '/**',
             },
+            {
+        protocol: 'https',
+        hostname: 'elearn.nptel.ac.in',
+        pathname: '/wp-content/uploads/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'media.istockphoto.com',
+        pathname: '/id/**',
+      },
+
         ],
     },
     
